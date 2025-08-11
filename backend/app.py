@@ -1,65 +1,100 @@
 from fastapi import FastAPI, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-import pandas as pd, os, numpy as np, joblib
+import pandas as pd
+import numpy as np
+import joblib
+import os
 from pydantic import BaseModel
 
-app = FastAPI(title='Arboviroses API')
-app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_methods=['*'], allow_headers=['*'])
+app = FastAPI(title="Arboviroses API")
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-MODEL_DIR = os.path.join(os.path.dirname(__file__), 'models')
+# CORS liberado para qualquer origem
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
-def load_city_csv(city):
+# Diretórios de dados e modelos
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
+
+def load_city_csv(city: str) -> pd.DataFrame:
+    """Carrega o CSV da cidade especificada."""
     path = os.path.join(DATA_DIR, f"{city}.csv")
-    if not os.path.exists(path): return pd.DataFrame()
-    return pd.read_csv(path, parse_dates=['date'])
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    return pd.read_csv(path, parse_dates=["date"])
 
-@app.get('/api/cities')
-def cities():
-    return ['teofilo_otoni', 'diamantina']
+@app.get("/")
+def root():
+    """Endpoint raiz para verificar status da API."""
+    return {"status": "ok", "message": "Arboviroses API online"}
 
-@app.get('/api/data/{city}')
+@app.get("/api/cities")
+def get_cities():
+    """Retorna lista de cidades disponíveis."""
+    return ["teofilo_otoni", "diamantina"]
+
+@app.get("/api/data/{city}")
 def get_data(city: str):
+    """Retorna dados históricos de uma cidade."""
     df = load_city_csv(city)
-    if df.empty: return {'error':'no data', 'data':[]}
-    return {'data': df.sort_values('date').to_dict(orient='records')}
+    if df.empty:
+        return {"error": "no data", "data": []}
+    return {"data": df.sort_values("date").to_dict(orient="records")}
 
 class PredictRequest(BaseModel):
     city: str
     last_weeks: int = 12
 
-@app.post('/api/predict')
+@app.post("/api/predict")
 def predict(req: PredictRequest, background_tasks: BackgroundTasks):
+    """Realiza previsão de casos para uma cidade."""
     df = load_city_csv(req.city)
-    if df.empty: return {'error':'no data'}
-    seq = df.sort_values('date')['cases'].values.astype(float)
+    if df.empty:
+        return {"error": "no data"}
+
+    seq = df.sort_values("date")["cases"].values.astype(float)
+
+    # Preenche com zeros se dados forem insuficientes
     if len(seq) < req.last_weeks:
         pad = np.zeros(req.last_weeks - len(seq))
         seq = np.concatenate([pad, seq])
-    # try LSTM model
+
+    model_path = os.path.join(MODEL_DIR, "model.h5")
+    scaler_path = os.path.join(MODEL_DIR, "scaler.pkl")
+
     try:
-        model_path = os.path.join(MODEL_DIR, 'model.h5')
-        scaler_path = os.path.join(MODEL_DIR, 'scaler.pkl')
         if os.path.exists(model_path):
             import tensorflow as tf
+
             scaler = joblib.load(scaler_path) if os.path.exists(scaler_path) else None
             last = seq[-req.last_weeks:]
+
             if scaler is not None:
-                last_s = scaler.transform(last.reshape(-1,1)).flatten()
+                last_scaled = scaler.transform(last.reshape(-1, 1)).flatten()
             else:
-                last_s = last
-            inp = last_s.reshape(1, req.last_weeks, 1)
+                last_scaled = last
+
+            inp = last_scaled.reshape(1, req.last_weeks, 1)
             model = tf.keras.models.load_model(model_path)
+
             p_scaled = model.predict(inp).flatten()
+
             if scaler is not None:
-                p = scaler.inverse_transform(p_scaled.reshape(-1,1)).flatten().tolist()
+                predictions = scaler.inverse_transform(p_scaled.reshape(-1, 1)).flatten().tolist()
             else:
-                p = p_scaled.tolist()
-            p = [max(0, float(x)) for x in p]
+                predictions = p_scaled.tolist()
+
+            predictions = [max(0, float(x)) for x in predictions]
         else:
-            avg = float(np.mean(seq[-4:])) if len(seq)>=4 else float(np.mean(seq))
-            p = [max(0, round(avg))]*4
+            avg = float(np.mean(seq[-4:])) if len(seq) >= 4 else float(np.mean(seq))
+            predictions = [max(0, round(avg))] * 4
+
     except Exception as e:
-        avg = float(np.mean(seq[-4:])) if len(seq)>=4 else float(np.mean(seq))
-        p = [max(0, round(avg))]*4
-    return {'prediction_weeks': p}
+        avg = float(np.mean(seq[-4:])) if len(seq) >= 4 else float(np.mean(seq))
+        predictions = [max(0, round(avg))] * 4
+
+    return {"prediction_weeks": predictions}
