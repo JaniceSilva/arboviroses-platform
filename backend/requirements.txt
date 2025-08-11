@@ -1,5 +1,6 @@
 fastapi
 uvicorn[standard]
+gunicorn==22.0.0
 pandas
 numpy
 scikit-learn
