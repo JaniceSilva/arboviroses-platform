@@ -1,0 +1,585 @@
+date,municipality,state,dengue_cases,zika_cases,chikungunya_cases,febre_amarela_cases,total_cases,source
+2019-12-29,Diamantina,MG,5,0,0,0,5,sinan
+2019-12-29,Teófilo Otoni,MG,5,0,0,0,5,sinan
+2020-01-05,Diamantina,MG,17,0,0,0,17,sinan
+2020-01-05,Teófilo Otoni,MG,9,0,0,0,9,sinan
+2020-01-12,Diamantina,MG,27,0,1,0,28,sinan
+2020-01-12,Teófilo Otoni,MG,11,0,0,0,11,sinan
+2020-01-19,Diamantina,MG,40,0,0,0,40,sinan
+2020-01-19,Teófilo Otoni,MG,23,1,0,0,24,sinan
+2020-01-26,Diamantina,MG,25,0,0,0,25,sinan
+2020-01-26,Teófilo Otoni,MG,23,0,0,0,23,sinan
+2020-02-02,Diamantina,MG,82,0,0,0,82,sinan
+2020-02-02,Teófilo Otoni,MG,46,0,0,0,46,sinan
+2020-02-09,Diamantina,MG,52,0,0,0,52,sinan
+2020-02-09,Teófilo Otoni,MG,83,0,3,0,86,sinan
+2020-02-16,Diamantina,MG,44,0,0,0,44,sinan
+2020-02-16,Teófilo Otoni,MG,67,0,2,0,69,sinan
+2020-02-23,Diamantina,MG,48,0,0,0,48,sinan
+2020-02-23,Teófilo Otoni,MG,99,2,3,0,104,sinan
+2020-03-01,Diamantina,MG,59,0,0,0,59,sinan
+2020-03-01,Teófilo Otoni,MG,139,1,6,0,146,sinan
+2020-03-08,Diamantina,MG,41,0,0,0,41,sinan
+2020-03-08,Teófilo Otoni,MG,101,1,6,0,108,sinan
+2020-03-15,Diamantina,MG,20,0,0,0,20,sinan
+2020-03-15,Teófilo Otoni,MG,62,2,4,0,68,sinan
+2020-03-22,Diamantina,MG,11,0,0,0,11,sinan
+2020-03-22,Teófilo Otoni,MG,108,2,3,0,113,sinan
+2020-03-29,Diamantina,MG,25,0,0,0,25,sinan
+2020-03-29,Teófilo Otoni,MG,131,2,6,0,139,sinan
+2020-04-05,Diamantina,MG,23,0,1,0,24,sinan
+2020-04-05,Teófilo Otoni,MG,178,1,11,0,190,sinan
+2020-04-12,Diamantina,MG,21,0,0,0,21,sinan
+2020-04-12,Teófilo Otoni,MG,189,0,34,0,223,sinan
+2020-04-19,Diamantina,MG,19,0,0,0,19,sinan
+2020-04-19,Teófilo Otoni,MG,158,0,17,0,175,sinan
+2020-04-26,Diamantina,MG,7,0,0,0,7,sinan
+2020-04-26,Teófilo Otoni,MG,130,7,23,0,160,sinan
+2020-05-03,Diamantina,MG,4,0,0,0,4,sinan
+2020-05-03,Teófilo Otoni,MG,160,1,11,0,172,sinan
+2020-05-10,Diamantina,MG,1,0,0,0,1,sinan
+2020-05-10,Teófilo Otoni,MG,131,2,27,0,160,sinan
+2020-05-17,Diamantina,MG,6,0,0,0,6,sinan
+2020-05-17,Teófilo Otoni,MG,102,0,20,0,122,sinan
+2020-05-24,Diamantina,MG,3,0,0,0,3,sinan
+2020-05-24,Teófilo Otoni,MG,71,3,13,0,87,sinan
+2020-05-31,Diamantina,MG,4,0,1,0,5,sinan
+2020-05-31,Teófilo Otoni,MG,36,0,3,0,39,sinan
+2020-06-07,Diamantina,MG,1,0,0,0,1,sinan
+2020-06-07,Teófilo Otoni,MG,30,1,4,0,35,sinan
+2020-06-14,Diamantina,MG,0,0,0,0,0,sinan
+2020-06-14,Teófilo Otoni,MG,34,2,4,0,40,sinan
+2020-06-21,Diamantina,MG,5,0,0,0,5,sinan
+2020-06-21,Teófilo Otoni,MG,17,0,2,0,19,sinan
+2020-06-28,Diamantina,MG,0,0,0,0,0,sinan
+2020-06-28,Teófilo Otoni,MG,12,0,5,0,17,sinan
+2020-07-05,Diamantina,MG,1,0,0,0,1,sinan
+2020-07-05,Teófilo Otoni,MG,5,0,1,0,6,sinan
+2020-07-12,Diamantina,MG,0,0,0,0,0,sinan
+2020-07-12,Teófilo Otoni,MG,5,0,3,0,8,sinan
+2020-07-19,Diamantina,MG,0,0,0,0,0,sinan
+2020-07-19,Teófilo Otoni,MG,4,0,2,0,6,sinan
+2020-07-26,Diamantina,MG,0,0,0,0,0,sinan
+2020-07-26,Teófilo Otoni,MG,2,0,3,0,5,sinan
+2020-08-02,Diamantina,MG,1,0,0,0,1,sinan
+2020-08-02,Teófilo Otoni,MG,2,0,2,0,4,sinan
+2020-08-09,Diamantina,MG,0,0,0,0,0,sinan
+2020-08-09,Teófilo Otoni,MG,2,0,4,0,6,sinan
+2020-08-16,Diamantina,MG,1,0,0,0,1,sinan
+2020-08-16,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2020-08-23,Diamantina,MG,0,0,0,0,0,sinan
+2020-08-23,Teófilo Otoni,MG,2,1,2,0,5,sinan
+2020-08-30,Diamantina,MG,1,0,0,0,1,sinan
+2020-08-30,Teófilo Otoni,MG,3,0,3,0,6,sinan
+2020-09-06,Diamantina,MG,0,0,0,0,0,sinan
+2020-09-06,Teófilo Otoni,MG,3,0,4,0,7,sinan
+2020-09-13,Diamantina,MG,2,0,0,0,2,sinan
+2020-09-13,Teófilo Otoni,MG,3,0,2,0,5,sinan
+2020-09-20,Diamantina,MG,0,0,0,0,0,sinan
+2020-09-20,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2020-09-27,Diamantina,MG,0,0,0,0,0,sinan
+2020-09-27,Teófilo Otoni,MG,1,0,1,0,2,sinan
+2020-10-04,Diamantina,MG,1,0,0,0,1,sinan
+2020-10-04,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2020-10-11,Diamantina,MG,1,0,0,0,1,sinan
+2020-10-11,Teófilo Otoni,MG,2,0,1,0,3,sinan
+2020-10-18,Diamantina,MG,0,0,0,0,0,sinan
+2020-10-18,Teófilo Otoni,MG,1,1,0,0,2,sinan
+2020-10-25,Diamantina,MG,0,0,0,0,0,sinan
+2020-10-25,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2020-11-01,Diamantina,MG,0,0,0,0,0,sinan
+2020-11-01,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2020-11-08,Diamantina,MG,0,0,0,0,0,sinan
+2020-11-08,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2020-11-15,Diamantina,MG,1,0,0,0,1,sinan
+2020-11-15,Teófilo Otoni,MG,1,0,1,0,2,sinan
+2020-11-22,Diamantina,MG,0,0,0,0,0,sinan
+2020-11-22,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2020-11-29,Diamantina,MG,0,0,0,0,0,sinan
+2020-11-29,Teófilo Otoni,MG,4,0,1,0,5,sinan
+2020-12-06,Diamantina,MG,0,0,0,0,0,sinan
+2020-12-06,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2020-12-13,Diamantina,MG,0,0,0,0,0,sinan
+2020-12-13,Teófilo Otoni,MG,3,0,1,0,4,sinan
+2020-12-20,Diamantina,MG,1,0,0,0,1,sinan
+2020-12-20,Teófilo Otoni,MG,5,0,0,0,5,sinan
+2020-12-27,Diamantina,MG,0,0,0,0,0,sinan
+2020-12-27,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-01-03,Diamantina,MG,2,0,0,0,2,sinan
+2021-01-03,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2021-01-10,Diamantina,MG,1,0,0,0,1,sinan
+2021-01-10,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-01-17,Diamantina,MG,1,0,0,0,1,sinan
+2021-01-17,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-01-24,Diamantina,MG,0,0,0,0,0,sinan
+2021-01-24,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-01-31,Diamantina,MG,0,0,0,0,0,sinan
+2021-01-31,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-02-07,Diamantina,MG,0,0,0,0,0,sinan
+2021-02-07,Teófilo Otoni,MG,2,0,3,0,5,sinan
+2021-02-14,Diamantina,MG,1,0,0,0,1,sinan
+2021-02-14,Teófilo Otoni,MG,3,0,1,0,4,sinan
+2021-02-21,Diamantina,MG,1,0,0,0,1,sinan
+2021-02-21,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-02-28,Diamantina,MG,2,0,0,0,2,sinan
+2021-02-28,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2021-03-07,Diamantina,MG,0,0,0,0,0,sinan
+2021-03-07,Teófilo Otoni,MG,2,0,1,0,3,sinan
+2021-03-14,Diamantina,MG,1,0,0,0,1,sinan
+2021-03-14,Teófilo Otoni,MG,5,0,4,0,9,sinan
+2021-03-21,Diamantina,MG,0,0,0,0,0,sinan
+2021-03-21,Teófilo Otoni,MG,3,0,3,0,6,sinan
+2021-03-28,Diamantina,MG,3,0,0,0,3,sinan
+2021-03-28,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-04-04,Diamantina,MG,0,0,0,0,0,sinan
+2021-04-04,Teófilo Otoni,MG,0,0,2,0,2,sinan
+2021-04-11,Diamantina,MG,0,0,0,0,0,sinan
+2021-04-11,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-04-18,Diamantina,MG,0,0,0,0,0,sinan
+2021-04-18,Teófilo Otoni,MG,5,0,0,0,5,sinan
+2021-04-25,Diamantina,MG,1,0,0,0,1,sinan
+2021-04-25,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2021-05-02,Diamantina,MG,0,0,0,0,0,sinan
+2021-05-02,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-05-09,Diamantina,MG,1,0,0,0,1,sinan
+2021-05-09,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-05-16,Diamantina,MG,0,0,0,0,0,sinan
+2021-05-16,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-05-23,Diamantina,MG,0,0,0,0,0,sinan
+2021-05-23,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-05-30,Diamantina,MG,0,0,0,0,0,sinan
+2021-05-30,Teófilo Otoni,MG,4,0,1,0,5,sinan
+2021-06-06,Diamantina,MG,0,0,0,0,0,sinan
+2021-06-06,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-06-13,Diamantina,MG,0,0,0,0,0,sinan
+2021-06-13,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2021-06-20,Diamantina,MG,0,0,0,0,0,sinan
+2021-06-20,Teófilo Otoni,MG,1,0,2,0,3,sinan
+2021-06-27,Diamantina,MG,0,0,0,0,0,sinan
+2021-06-27,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2021-07-04,Diamantina,MG,0,0,0,0,0,sinan
+2021-07-04,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-07-11,Diamantina,MG,0,0,0,0,0,sinan
+2021-07-11,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-07-18,Diamantina,MG,0,0,0,0,0,sinan
+2021-07-18,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2021-07-25,Diamantina,MG,0,0,0,0,0,sinan
+2021-07-25,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-08-01,Diamantina,MG,0,0,0,0,0,sinan
+2021-08-01,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-08-08,Diamantina,MG,0,0,0,0,0,sinan
+2021-08-08,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-08-15,Diamantina,MG,0,0,0,0,0,sinan
+2021-08-15,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2021-08-22,Diamantina,MG,0,0,0,0,0,sinan
+2021-08-22,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-08-29,Diamantina,MG,0,0,0,0,0,sinan
+2021-08-29,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-09-05,Diamantina,MG,0,0,0,0,0,sinan
+2021-09-05,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-09-12,Diamantina,MG,0,0,0,0,0,sinan
+2021-09-12,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-09-19,Diamantina,MG,0,0,0,0,0,sinan
+2021-09-19,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-09-26,Diamantina,MG,0,0,0,0,0,sinan
+2021-09-26,Teófilo Otoni,MG,1,0,0,0,1,sinan
+2021-10-03,Diamantina,MG,0,0,0,0,0,sinan
+2021-10-03,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-10-10,Diamantina,MG,1,0,0,0,1,sinan
+2021-10-10,Teófilo Otoni,MG,1,0,1,0,2,sinan
+2021-10-17,Diamantina,MG,1,0,0,0,1,sinan
+2021-10-17,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-10-24,Diamantina,MG,0,0,0,0,0,sinan
+2021-10-24,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-10-31,Diamantina,MG,1,0,0,0,1,sinan
+2021-10-31,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2021-11-07,Diamantina,MG,0,0,0,0,0,sinan
+2021-11-07,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-11-14,Diamantina,MG,1,0,0,0,1,sinan
+2021-11-14,Teófilo Otoni,MG,1,0,1,0,2,sinan
+2021-11-21,Diamantina,MG,2,0,0,0,2,sinan
+2021-11-21,Teófilo Otoni,MG,0,0,2,0,2,sinan
+2021-11-28,Diamantina,MG,1,0,0,0,1,sinan
+2021-11-28,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-12-05,Diamantina,MG,0,0,0,0,0,sinan
+2021-12-05,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-12-12,Diamantina,MG,0,0,0,0,0,sinan
+2021-12-12,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2021-12-19,Diamantina,MG,0,0,0,0,0,sinan
+2021-12-19,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2021-12-26,Diamantina,MG,0,0,0,0,0,sinan
+2021-12-26,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2022-01-02,Diamantina,MG,1,0,0,0,1,sinan
+2022-01-02,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2022-01-09,Diamantina,MG,5,0,0,0,5,sinan
+2022-01-09,Teófilo Otoni,MG,1,0,3,0,4,sinan
+2022-01-16,Diamantina,MG,5,0,0,0,5,sinan
+2022-01-16,Teófilo Otoni,MG,0,0,0,0,0,sinan
+2022-01-23,Diamantina,MG,4,0,0,0,4,sinan
+2022-01-23,Teófilo Otoni,MG,0,0,1,0,1,sinan
+2022-01-30,Diamantina,MG,2,0,0,0,2,sinan
+2022-01-30,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2022-02-06,Diamantina,MG,1,0,0,0,1,sinan
+2022-02-06,Teófilo Otoni,MG,4,0,1,0,5,sinan
+2022-02-13,Diamantina,MG,0,0,0,0,0,sinan
+2022-02-13,Teófilo Otoni,MG,3,0,3,0,6,sinan
+2022-02-20,Diamantina,MG,0,0,0,0,0,sinan
+2022-02-20,Teófilo Otoni,MG,5,0,1,0,6,sinan
+2022-02-27,Diamantina,MG,2,0,1,0,3,sinan
+2022-02-27,Teófilo Otoni,MG,6,0,2,0,8,sinan
+2022-03-06,Diamantina,MG,1,0,0,0,1,sinan
+2022-03-06,Teófilo Otoni,MG,7,0,3,0,10,sinan
+2022-03-13,Diamantina,MG,1,0,0,0,1,sinan
+2022-03-13,Teófilo Otoni,MG,6,0,4,0,10,sinan
+2022-03-20,Diamantina,MG,2,0,0,0,2,sinan
+2022-03-20,Teófilo Otoni,MG,13,0,7,0,20,sinan
+2022-03-27,Diamantina,MG,2,0,0,0,2,sinan
+2022-03-27,Teófilo Otoni,MG,22,0,10,0,32,sinan
+2022-04-03,Diamantina,MG,1,0,0,0,1,sinan
+2022-04-03,Teófilo Otoni,MG,32,0,4,0,36,sinan
+2022-04-10,Diamantina,MG,3,0,1,0,4,sinan
+2022-04-10,Teófilo Otoni,MG,24,0,4,0,28,sinan
+2022-04-17,Diamantina,MG,1,0,0,0,1,sinan
+2022-04-17,Teófilo Otoni,MG,39,0,11,0,50,sinan
+2022-04-24,Diamantina,MG,3,0,0,0,3,sinan
+2022-04-24,Teófilo Otoni,MG,55,0,11,0,66,sinan
+2022-05-01,Diamantina,MG,0,0,0,0,0,sinan
+2022-05-01,Teófilo Otoni,MG,59,0,9,0,68,sinan
+2022-05-08,Diamantina,MG,4,0,0,0,4,sinan
+2022-05-08,Teófilo Otoni,MG,96,0,10,0,106,sinan
+2022-05-15,Diamantina,MG,1,0,0,0,1,sinan
+2022-05-15,Teófilo Otoni,MG,108,0,15,0,123,sinan
+2022-05-22,Diamantina,MG,3,0,0,0,3,sinan
+2022-05-22,Teófilo Otoni,MG,104,0,10,0,114,sinan
+2022-05-29,Diamantina,MG,5,0,0,0,5,sinan
+2022-05-29,Teófilo Otoni,MG,97,0,17,0,114,sinan
+2022-06-05,Diamantina,MG,4,0,0,0,4,sinan
+2022-06-05,Teófilo Otoni,MG,83,0,10,0,93,sinan
+2022-06-12,Diamantina,MG,1,0,0,0,1,sinan
+2022-06-12,Teófilo Otoni,MG,77,0,10,0,87,sinan
+2022-06-19,Diamantina,MG,7,0,0,0,7,sinan
+2022-06-19,Teófilo Otoni,MG,70,0,1,0,71,sinan
+2022-06-26,Diamantina,MG,2,0,0,0,2,sinan
+2022-06-26,Teófilo Otoni,MG,46,0,4,0,50,sinan
+2022-07-03,Diamantina,MG,2,0,0,0,2,sinan
+2022-07-03,Teófilo Otoni,MG,35,0,3,0,38,sinan
+2022-07-10,Diamantina,MG,1,0,0,0,1,sinan
+2022-07-10,Teófilo Otoni,MG,33,0,6,0,39,sinan
+2022-07-17,Diamantina,MG,1,0,0,0,1,sinan
+2022-07-17,Teófilo Otoni,MG,35,0,1,0,36,sinan
+2022-07-24,Diamantina,MG,4,0,0,0,4,sinan
+2022-07-24,Teófilo Otoni,MG,38,0,1,0,39,sinan
+2022-07-31,Diamantina,MG,1,0,0,0,1,sinan
+2022-07-31,Teófilo Otoni,MG,43,0,1,0,44,sinan
+2022-08-07,Diamantina,MG,2,0,0,0,2,sinan
+2022-08-07,Teófilo Otoni,MG,34,0,1,0,35,sinan
+2022-08-14,Diamantina,MG,1,0,0,0,1,sinan
+2022-08-14,Teófilo Otoni,MG,15,0,1,0,16,sinan
+2022-08-21,Diamantina,MG,2,0,0,0,2,sinan
+2022-08-21,Teófilo Otoni,MG,17,0,2,0,19,sinan
+2022-08-28,Diamantina,MG,0,0,0,0,0,sinan
+2022-08-28,Teófilo Otoni,MG,9,0,0,0,9,sinan
+2022-09-04,Diamantina,MG,1,0,0,0,1,sinan
+2022-09-04,Teófilo Otoni,MG,9,0,0,0,9,sinan
+2022-09-11,Diamantina,MG,1,0,0,0,1,sinan
+2022-09-11,Teófilo Otoni,MG,16,0,0,0,16,sinan
+2022-09-18,Diamantina,MG,1,0,0,0,1,sinan
+2022-09-18,Teófilo Otoni,MG,8,0,1,0,9,sinan
+2022-09-25,Diamantina,MG,0,0,0,0,0,sinan
+2022-09-25,Teófilo Otoni,MG,9,0,3,0,12,sinan
+2022-10-02,Diamantina,MG,1,0,0,0,1,sinan
+2022-10-02,Teófilo Otoni,MG,8,0,0,0,8,sinan
+2022-10-09,Diamantina,MG,1,0,0,0,1,sinan
+2022-10-09,Teófilo Otoni,MG,7,0,0,0,7,sinan
+2022-10-16,Diamantina,MG,3,0,0,0,3,sinan
+2022-10-16,Teófilo Otoni,MG,5,0,2,0,7,sinan
+2022-10-23,Diamantina,MG,2,0,0,0,2,sinan
+2022-10-23,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2022-10-30,Diamantina,MG,4,0,0,0,4,sinan
+2022-10-30,Teófilo Otoni,MG,6,0,1,0,7,sinan
+2022-11-06,Diamantina,MG,5,0,0,0,5,sinan
+2022-11-06,Teófilo Otoni,MG,7,0,0,0,7,sinan
+2022-11-13,Diamantina,MG,4,0,0,0,4,sinan
+2022-11-13,Teófilo Otoni,MG,5,0,1,0,6,sinan
+2022-11-20,Diamantina,MG,10,0,0,0,10,sinan
+2022-11-20,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2022-11-27,Diamantina,MG,3,0,0,0,3,sinan
+2022-11-27,Teófilo Otoni,MG,3,0,0,0,3,sinan
+2022-12-04,Diamantina,MG,4,0,0,0,4,sinan
+2022-12-04,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2022-12-11,Diamantina,MG,3,0,0,0,3,sinan
+2022-12-11,Teófilo Otoni,MG,9,0,2,0,11,sinan
+2022-12-18,Diamantina,MG,1,0,0,0,1,sinan
+2022-12-18,Teófilo Otoni,MG,8,0,0,0,8,sinan
+2022-12-25,Diamantina,MG,2,0,0,0,2,sinan
+2022-12-25,Teófilo Otoni,MG,16,0,7,0,23,sinan
+2023-01-01,Diamantina,MG,3,0,0,0,3,sinan
+2023-01-01,Teófilo Otoni,MG,45,0,20,0,65,sinan
+2023-01-08,Diamantina,MG,7,0,1,0,8,sinan
+2023-01-08,Teófilo Otoni,MG,89,0,50,0,139,sinan
+2023-01-15,Diamantina,MG,4,0,0,0,4,sinan
+2023-01-15,Teófilo Otoni,MG,155,0,70,0,225,sinan
+2023-01-22,Diamantina,MG,2,0,0,0,2,sinan
+2023-01-22,Teófilo Otoni,MG,293,1,126,0,420,sinan
+2023-01-29,Diamantina,MG,6,0,0,0,6,sinan
+2023-01-29,Teófilo Otoni,MG,341,2,159,0,502,sinan
+2023-02-05,Diamantina,MG,11,0,0,0,11,sinan
+2023-02-05,Teófilo Otoni,MG,426,0,225,0,651,sinan
+2023-02-12,Diamantina,MG,1,0,0,0,1,sinan
+2023-02-12,Teófilo Otoni,MG,365,1,314,0,680,sinan
+2023-02-19,Diamantina,MG,10,0,0,0,10,sinan
+2023-02-19,Teófilo Otoni,MG,271,0,387,0,658,sinan
+2023-02-26,Diamantina,MG,5,0,3,0,8,sinan
+2023-02-26,Teófilo Otoni,MG,387,1,443,0,831,sinan
+2023-03-05,Diamantina,MG,18,0,7,0,25,sinan
+2023-03-05,Teófilo Otoni,MG,279,0,385,0,664,sinan
+2023-03-12,Diamantina,MG,30,0,6,0,36,sinan
+2023-03-12,Teófilo Otoni,MG,208,1,370,0,579,sinan
+2023-03-19,Diamantina,MG,28,0,9,0,37,sinan
+2023-03-19,Teófilo Otoni,MG,229,0,292,0,521,sinan
+2023-03-26,Diamantina,MG,41,1,7,0,49,sinan
+2023-03-26,Teófilo Otoni,MG,167,0,177,0,344,sinan
+2023-04-02,Diamantina,MG,53,0,11,0,64,sinan
+2023-04-02,Teófilo Otoni,MG,105,0,139,0,244,sinan
+2023-04-09,Diamantina,MG,79,0,14,0,93,sinan
+2023-04-09,Teófilo Otoni,MG,129,0,152,0,281,sinan
+2023-04-16,Diamantina,MG,60,0,11,0,71,sinan
+2023-04-16,Teófilo Otoni,MG,71,0,81,0,152,sinan
+2023-04-23,Diamantina,MG,45,0,4,0,49,sinan
+2023-04-23,Teófilo Otoni,MG,82,0,48,0,130,sinan
+2023-04-30,Diamantina,MG,67,0,4,0,71,sinan
+2023-04-30,Teófilo Otoni,MG,70,0,50,0,120,sinan
+2023-05-07,Diamantina,MG,81,0,6,0,87,sinan
+2023-05-07,Teófilo Otoni,MG,56,0,49,0,105,sinan
+2023-05-14,Diamantina,MG,66,0,2,0,68,sinan
+2023-05-14,Teófilo Otoni,MG,87,0,57,0,144,sinan
+2023-05-21,Diamantina,MG,50,0,3,0,53,sinan
+2023-05-21,Teófilo Otoni,MG,49,0,46,0,95,sinan
+2023-05-28,Diamantina,MG,28,0,0,0,28,sinan
+2023-05-28,Teófilo Otoni,MG,48,0,30,0,78,sinan
+2023-06-04,Diamantina,MG,15,0,1,0,16,sinan
+2023-06-04,Teófilo Otoni,MG,46,0,28,0,74,sinan
+2023-06-11,Diamantina,MG,13,1,0,0,14,sinan
+2023-06-11,Teófilo Otoni,MG,44,0,28,0,72,sinan
+2023-06-18,Diamantina,MG,11,0,1,0,12,sinan
+2023-06-18,Teófilo Otoni,MG,40,0,12,0,52,sinan
+2023-06-25,Diamantina,MG,8,0,0,0,8,sinan
+2023-06-25,Teófilo Otoni,MG,25,0,11,0,36,sinan
+2023-07-02,Diamantina,MG,11,0,0,0,11,sinan
+2023-07-02,Teófilo Otoni,MG,23,0,4,0,27,sinan
+2023-07-09,Diamantina,MG,4,0,0,0,4,sinan
+2023-07-09,Teófilo Otoni,MG,19,0,3,0,22,sinan
+2023-07-16,Diamantina,MG,10,0,0,0,10,sinan
+2023-07-16,Teófilo Otoni,MG,19,0,2,0,21,sinan
+2023-07-23,Diamantina,MG,4,0,0,0,4,sinan
+2023-07-23,Teófilo Otoni,MG,13,0,3,0,16,sinan
+2023-07-30,Diamantina,MG,7,0,1,0,8,sinan
+2023-07-30,Teófilo Otoni,MG,11,0,3,0,14,sinan
+2023-08-06,Diamantina,MG,3,1,0,0,4,sinan
+2023-08-06,Teófilo Otoni,MG,10,0,2,0,12,sinan
+2023-08-13,Diamantina,MG,2,0,1,0,3,sinan
+2023-08-13,Teófilo Otoni,MG,15,0,3,0,18,sinan
+2023-08-20,Diamantina,MG,2,0,0,0,2,sinan
+2023-08-20,Teófilo Otoni,MG,14,0,1,0,15,sinan
+2023-08-27,Diamantina,MG,5,0,0,0,5,sinan
+2023-08-27,Teófilo Otoni,MG,9,0,3,0,12,sinan
+2023-09-03,Diamantina,MG,4,0,1,0,5,sinan
+2023-09-03,Teófilo Otoni,MG,12,0,2,0,14,sinan
+2023-09-10,Diamantina,MG,1,0,1,0,2,sinan
+2023-09-10,Teófilo Otoni,MG,10,0,0,0,10,sinan
+2023-09-17,Diamantina,MG,6,0,1,0,7,sinan
+2023-09-17,Teófilo Otoni,MG,7,0,4,0,11,sinan
+2023-09-24,Diamantina,MG,7,0,0,0,7,sinan
+2023-09-24,Teófilo Otoni,MG,10,0,2,0,12,sinan
+2023-10-01,Diamantina,MG,4,0,0,0,4,sinan
+2023-10-01,Teófilo Otoni,MG,9,0,1,0,10,sinan
+2023-10-08,Diamantina,MG,4,0,1,0,5,sinan
+2023-10-08,Teófilo Otoni,MG,11,0,2,0,13,sinan
+2023-10-15,Diamantina,MG,10,0,1,0,11,sinan
+2023-10-15,Teófilo Otoni,MG,11,0,1,0,12,sinan
+2023-10-22,Diamantina,MG,8,0,0,0,8,sinan
+2023-10-22,Teófilo Otoni,MG,4,0,3,0,7,sinan
+2023-10-29,Diamantina,MG,9,0,0,0,9,sinan
+2023-10-29,Teófilo Otoni,MG,1,0,2,0,3,sinan
+2023-11-05,Diamantina,MG,10,0,0,0,10,sinan
+2023-11-05,Teófilo Otoni,MG,5,0,1,0,6,sinan
+2023-11-12,Diamantina,MG,5,0,1,0,6,sinan
+2023-11-12,Teófilo Otoni,MG,2,0,0,0,2,sinan
+2023-11-19,Diamantina,MG,7,0,3,0,10,sinan
+2023-11-19,Teófilo Otoni,MG,5,0,1,0,6,sinan
+2023-11-26,Diamantina,MG,18,0,4,0,22,sinan
+2023-11-26,Teófilo Otoni,MG,6,0,4,0,10,sinan
+2023-12-03,Diamantina,MG,19,0,1,0,20,sinan
+2023-12-03,Teófilo Otoni,MG,2,0,2,0,4,sinan
+2023-12-10,Diamantina,MG,14,0,0,0,14,sinan
+2023-12-10,Teófilo Otoni,MG,11,0,0,0,11,sinan
+2023-12-17,Diamantina,MG,9,0,0,0,9,sinan
+2023-12-17,Teófilo Otoni,MG,17,0,6,0,23,sinan
+2023-12-24,Diamantina,MG,16,0,0,0,16,sinan
+2023-12-24,Teófilo Otoni,MG,16,0,2,0,18,sinan
+2023-12-31,Diamantina,MG,64,0,1,0,65,sinan
+2023-12-31,Teófilo Otoni,MG,26,0,9,0,35,sinan
+2024-01-07,Diamantina,MG,102,0,2,0,104,sinan
+2024-01-07,Teófilo Otoni,MG,50,0,6,0,56,sinan
+2024-01-14,Diamantina,MG,168,0,7,0,175,sinan
+2024-01-14,Teófilo Otoni,MG,58,0,7,0,65,sinan
+2024-01-21,Diamantina,MG,242,0,9,0,251,sinan
+2024-01-21,Teófilo Otoni,MG,107,0,21,0,128,sinan
+2024-01-28,Diamantina,MG,410,0,6,0,416,sinan
+2024-01-28,Teófilo Otoni,MG,219,0,26,0,245,sinan
+2024-02-04,Diamantina,MG,460,0,8,0,468,sinan
+2024-02-04,Teófilo Otoni,MG,227,0,30,0,257,sinan
+2024-02-11,Diamantina,MG,600,0,16,0,616,sinan
+2024-02-11,Teófilo Otoni,MG,403,0,48,0,451,sinan
+2024-02-18,Diamantina,MG,694,0,18,0,712,sinan
+2024-02-18,Teófilo Otoni,MG,500,0,70,0,570,sinan
+2024-02-25,Diamantina,MG,853,0,4,0,857,sinan
+2024-02-25,Teófilo Otoni,MG,647,0,70,0,717,sinan
+2024-03-03,Diamantina,MG,773,0,7,0,780,sinan
+2024-03-03,Teófilo Otoni,MG,726,0,76,0,802,sinan
+2024-03-10,Diamantina,MG,671,0,11,0,682,sinan
+2024-03-10,Teófilo Otoni,MG,856,0,80,0,936,sinan
+2024-03-17,Diamantina,MG,576,0,10,0,586,sinan
+2024-03-17,Teófilo Otoni,MG,902,0,83,0,985,sinan
+2024-03-24,Diamantina,MG,484,0,18,0,502,sinan
+2024-03-24,Teófilo Otoni,MG,664,0,46,0,710,sinan
+2024-03-31,Diamantina,MG,493,0,17,0,510,sinan
+2024-03-31,Teófilo Otoni,MG,903,0,39,0,942,sinan
+2024-04-07,Diamantina,MG,438,0,12,0,450,sinan
+2024-04-07,Teófilo Otoni,MG,605,0,45,0,650,sinan
+2024-04-14,Diamantina,MG,274,0,2,0,276,sinan
+2024-04-14,Teófilo Otoni,MG,458,0,25,0,483,sinan
+2024-04-21,Diamantina,MG,201,0,7,0,208,sinan
+2024-04-21,Teófilo Otoni,MG,306,0,27,0,333,sinan
+2024-04-28,Diamantina,MG,169,0,6,0,175,sinan
+2024-04-28,Teófilo Otoni,MG,199,0,22,0,221,sinan
+2024-05-05,Diamantina,MG,131,0,2,0,133,sinan
+2024-05-05,Teófilo Otoni,MG,180,0,20,0,200,sinan
+2024-05-12,Diamantina,MG,82,0,0,0,82,sinan
+2024-05-12,Teófilo Otoni,MG,136,0,12,0,148,sinan
+2024-05-19,Diamantina,MG,69,0,2,0,71,sinan
+2024-05-19,Teófilo Otoni,MG,73,0,3,0,76,sinan
+2024-05-26,Diamantina,MG,34,0,0,0,34,sinan
+2024-05-26,Teófilo Otoni,MG,58,0,6,0,64,sinan
+2024-06-02,Diamantina,MG,24,0,0,0,24,sinan
+2024-06-02,Teófilo Otoni,MG,56,0,3,0,59,sinan
+2024-06-09,Diamantina,MG,12,0,4,0,16,sinan
+2024-06-09,Teófilo Otoni,MG,49,0,0,0,49,sinan
+2024-06-16,Diamantina,MG,9,0,1,0,10,sinan
+2024-06-16,Teófilo Otoni,MG,47,0,1,0,48,sinan
+2024-06-23,Diamantina,MG,8,0,0,0,8,sinan
+2024-06-23,Teófilo Otoni,MG,29,0,2,0,31,sinan
+2024-06-30,Diamantina,MG,7,0,0,0,7,sinan
+2024-06-30,Teófilo Otoni,MG,33,0,0,0,33,sinan
+2024-07-07,Diamantina,MG,2,0,0,0,2,sinan
+2024-07-07,Teófilo Otoni,MG,30,0,1,0,31,sinan
+2024-07-14,Diamantina,MG,2,0,0,0,2,sinan
+2024-07-14,Teófilo Otoni,MG,28,0,2,0,30,sinan
+2024-07-21,Diamantina,MG,2,0,0,0,2,sinan
+2024-07-21,Teófilo Otoni,MG,14,0,0,0,14,sinan
+2024-07-28,Diamantina,MG,1,0,0,0,1,sinan
+2024-07-28,Teófilo Otoni,MG,6,0,0,0,6,sinan
+2024-08-04,Diamantina,MG,1,0,0,0,1,sinan
+2024-08-04,Teófilo Otoni,MG,18,0,1,0,19,sinan
+2024-08-11,Diamantina,MG,2,0,0,0,2,sinan
+2024-08-11,Teófilo Otoni,MG,17,0,1,0,18,sinan
+2024-08-18,Diamantina,MG,3,0,0,0,3,sinan
+2024-08-18,Teófilo Otoni,MG,17,0,0,0,17,sinan
+2024-08-25,Diamantina,MG,8,0,0,0,8,sinan
+2024-08-25,Teófilo Otoni,MG,22,0,2,0,24,sinan
+2024-09-01,Diamantina,MG,6,0,0,0,6,sinan
+2024-09-01,Teófilo Otoni,MG,8,0,0,0,8,sinan
+2024-09-08,Diamantina,MG,3,0,0,0,3,sinan
+2024-09-08,Teófilo Otoni,MG,15,0,0,0,15,sinan
+2024-09-15,Diamantina,MG,15,0,0,0,15,sinan
+2024-09-15,Teófilo Otoni,MG,3,0,1,0,4,sinan
+2024-09-22,Diamantina,MG,8,0,0,0,8,sinan
+2024-09-22,Teófilo Otoni,MG,4,0,0,0,4,sinan
+2024-09-29,Diamantina,MG,9,0,1,0,10,sinan
+2024-09-29,Teófilo Otoni,MG,1,0,1,0,2,sinan
+2024-10-06,Diamantina,MG,8,0,0,0,8,sinan
+2024-10-06,Teófilo Otoni,MG,6,0,1,0,7,sinan
+2024-10-13,Diamantina,MG,12,0,0,0,12,sinan
+2024-10-13,Teófilo Otoni,MG,8,0,0,0,8,sinan
+2024-10-20,Diamantina,MG,11,0,0,0,11,sinan
+2024-10-20,Teófilo Otoni,MG,8,0,1,0,9,sinan
+2024-10-27,Diamantina,MG,10,0,1,0,11,sinan
+2024-10-27,Teófilo Otoni,MG,7,0,2,0,9,sinan
+2024-11-03,Diamantina,MG,20,0,0,0,20,sinan
+2024-11-03,Teófilo Otoni,MG,14,0,1,0,15,sinan
+2024-11-10,Diamantina,MG,24,0,0,0,24,sinan
+2024-11-10,Teófilo Otoni,MG,10,0,1,0,11,sinan
+2024-11-17,Diamantina,MG,28,0,0,0,28,sinan
+2024-11-17,Teófilo Otoni,MG,10,0,3,0,13,sinan
+2024-11-24,Diamantina,MG,49,0,1,0,50,sinan
+2024-11-24,Teófilo Otoni,MG,12,0,1,0,13,sinan
+2024-12-01,Diamantina,MG,41,0,1,0,42,sinan
+2024-12-01,Teófilo Otoni,MG,9,0,4,0,13,sinan
+2024-12-08,Diamantina,MG,50,0,0,0,50,sinan
+2024-12-08,Teófilo Otoni,MG,8,0,0,0,8,sinan
+2024-12-15,Diamantina,MG,34,0,0,0,34,sinan
+2024-12-15,Teófilo Otoni,MG,9,0,1,0,10,sinan
+2024-12-22,Diamantina,MG,18,0,1,0,19,sinan
+2024-12-22,Teófilo Otoni,MG,6,0,0,0,6,sinan
+2024-12-29,Diamantina,MG,30,0,0,0,30,sinan
+2024-12-29,Teófilo Otoni,MG,6,0,1,0,7,sinan
+2025-01-05,Diamantina,MG,23,0,0,0,23,sinan
+2025-01-05,Teófilo Otoni,MG,25,0,1,0,26,sinan
+2025-01-12,Diamantina,MG,19,0,1,0,20,sinan
+2025-01-12,Teófilo Otoni,MG,27,0,0,0,27,sinan
+2025-01-19,Diamantina,MG,42,0,2,0,44,sinan
+2025-01-19,Teófilo Otoni,MG,52,0,1,0,53,sinan
+2025-01-26,Diamantina,MG,28,0,0,0,28,sinan
+2025-01-26,Teófilo Otoni,MG,55,0,6,0,61,sinan
+2025-02-02,Diamantina,MG,28,0,0,0,28,sinan
+2025-02-02,Teófilo Otoni,MG,58,0,0,0,58,sinan
+2025-02-09,Diamantina,MG,32,0,0,0,32,sinan
+2025-02-09,Teófilo Otoni,MG,48,0,2,0,50,sinan
+2025-02-16,Diamantina,MG,29,0,1,0,30,sinan
+2025-02-16,Teófilo Otoni,MG,45,0,2,0,47,sinan
+2025-02-23,Diamantina,MG,14,0,0,0,14,sinan
+2025-02-23,Teófilo Otoni,MG,32,0,0,0,32,sinan
+2025-03-02,Diamantina,MG,39,0,1,0,40,sinan
+2025-03-02,Teófilo Otoni,MG,44,0,0,0,44,sinan
+2025-03-09,Diamantina,MG,29,0,0,0,29,sinan
+2025-03-09,Teófilo Otoni,MG,72,0,2,0,74,sinan
+2025-03-16,Diamantina,MG,21,0,0,0,21,sinan
+2025-03-16,Teófilo Otoni,MG,113,0,9,0,122,sinan
+2025-03-23,Diamantina,MG,22,0,0,0,22,sinan
+2025-03-23,Teófilo Otoni,MG,124,0,10,0,134,sinan
+2025-03-30,Diamantina,MG,25,0,0,0,25,sinan
+2025-03-30,Teófilo Otoni,MG,146,0,1,0,147,sinan
+2025-04-06,Diamantina,MG,29,0,1,0,30,sinan
+2025-04-06,Teófilo Otoni,MG,90,0,2,0,92,sinan
+2025-04-13,Diamantina,MG,17,0,0,0,17,sinan
+2025-04-13,Teófilo Otoni,MG,88,0,1,0,89,sinan
+2025-04-20,Diamantina,MG,10,0,1,0,11,sinan
+2025-04-20,Teófilo Otoni,MG,145,0,2,0,147,sinan
+2025-04-27,Diamantina,MG,20,0,0,0,20,sinan
+2025-04-27,Teófilo Otoni,MG,77,0,3,0,80,sinan
+2025-05-04,Diamantina,MG,16,0,1,0,17,sinan
+2025-05-04,Teófilo Otoni,MG,77,0,2,0,79,sinan
+2025-05-11,Diamantina,MG,19,0,1,0,20,sinan
+2025-05-11,Teófilo Otoni,MG,63,0,0,0,63,sinan
+2025-05-18,Diamantina,MG,15,0,0,0,15,sinan
+2025-05-18,Teófilo Otoni,MG,59,0,0,0,59,sinan
+2025-05-25,Diamantina,MG,10,0,0,0,10,sinan
+2025-05-25,Teófilo Otoni,MG,35,0,1,0,36,sinan
+2025-06-01,Diamantina,MG,18,0,0,0,18,sinan
+2025-06-01,Teófilo Otoni,MG,45,0,1,0,46,sinan
+2025-06-08,Diamantina,MG,14,0,1,0,15,sinan
+2025-06-08,Teófilo Otoni,MG,49,0,0,0,49,sinan
+2025-06-15,Diamantina,MG,11,0,2,0,13,sinan
+2025-06-15,Teófilo Otoni,MG,37,0,0,0,37,sinan
+2025-06-22,Diamantina,MG,8,0,0,0,8,sinan
+2025-06-22,Teófilo Otoni,MG,30,0,0,0,30,sinan
+2025-06-29,Diamantina,MG,16,0,2,0,18,sinan
+2025-06-29,Teófilo Otoni,MG,27,0,1,0,28,sinan
+2025-07-06,Diamantina,MG,11,0,1,0,12,sinan
+2025-07-06,Teófilo Otoni,MG,25,0,0,0,25,sinan
+2025-07-13,Diamantina,MG,7,0,4,0,11,sinan
+2025-07-13,Teófilo Otoni,MG,17,0,0,0,17,sinan
+2025-07-20,Diamantina,MG,8,0,5,0,13,sinan
+2025-07-20,Teófilo Otoni,MG,14,0,0,0,14,sinan
+2025-07-27,Diamantina,MG,0,0,0,0,0,sinan
+2025-07-27,Teófilo Otoni,MG,5,0,0,0,5,sinan
