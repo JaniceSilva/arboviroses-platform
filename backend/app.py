@@ -85,7 +85,8 @@ class PredictRequest(BaseModel):
 
 
 @app.post("/api/predict")
-def predict(req: PredictRequest, background_tasks: BackgroundTasks | None = None):
+#def predict(req: PredictRequest, background_tasks: BackgroundTasks | None = None):
+def predict(req: PredictRequest):
     """Realiza previsão de casos para uma cidade."""
     df = load_city_csv(req.city)
     if df.empty:
