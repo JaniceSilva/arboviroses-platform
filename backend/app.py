@@ -88,16 +88,7 @@ def load_city_csv(city: str) -> pd.DataFrame:
     path = os.path.join(DATA_DIR, f"{city}.csv")
     if not os.path.exists(path):
         return pd.DataFrame()
-    df = pd.read_csv(path)
-    # Tenta encontrar coluna de data
-    date_col = None
-    for col in ["date", "data"]:
-        if col in df.columns:
-            date_col = col
-            break
-    if date_col:
-        df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
-    return df
+    return pd.read_csv(path, parse_dates=["date"])
 
 
 def get_db_connection() -> sqlite3.Connection:
@@ -111,24 +102,46 @@ def get_db_connection() -> sqlite3.Connection:
 
 
 def query_weekly_cases(city: str) -> List[Dict[str, Any]]:
-    """Fetch weekly case counts from the database for a given city.
+    """Fetch weekly aggregated data from the database for a given city.
 
-    Returns a list of dictionaries with ``date`` and ``total_cases`` keys.
+    Returns a list of dictionaries with ``date``, ``cases`` and ``temp`` keys.
     If the database or table is missing, falls back to an empty list.
+
+    The ``cases`` field corresponds to the ``total_cases`` column in the
+    database.  Temperature values are returned as floats when available
+    or ``None`` when missing.
     """
     if not os.path.exists(DB_PATH):
         return []
     conn = get_db_connection()
     try:
+        # Attempt to read date, total_cases and temp from the weekly_cases table
         cursor = conn.execute(
-            "SELECT date, total_cases FROM weekly_cases WHERE city = ? ORDER BY date",
+            "SELECT date, total_cases, temp FROM weekly_cases WHERE city = ? ORDER BY date",
             (city,),
         )
         rows = cursor.fetchall()
-        return [
-            {"date": row[0], "total_cases": int(row[1]) if row[1] is not None else 0}
-            for row in rows
-        ]
+        result: List[Dict[str, Any]] = []
+        for row in rows:
+            date_str = row[0]
+            total_cases = row[1]
+            temp_val = row[2]  # May be None or NaN
+            # Ensure cases is an int (0 when missing)
+            cases_val = int(total_cases) if total_cases is not None else 0
+            # Temperature may be stored as float or None; preserve None
+            if temp_val is None:
+                temp_out: Optional[float] = None
+            else:
+                try:
+                    temp_out = float(temp_val)
+                except Exception:
+                    temp_out = None
+            result.append({
+                "date": date_str,
+                "cases": cases_val,
+                "temp": temp_out,
+            })
+        return result
     except Exception:
         # Table does not exist or other error
         return []
@@ -207,12 +220,41 @@ def get_data(city: str):
     records = query_weekly_cases(city)
     if records:
         return {"data": records}
-    # Fallback to CSV
+    # Fallback to CSV if no database data
     df = load_city_csv(city)
     if df.empty:
         return {"error": "no data", "data": []}
+    # Ensure the DataFrame is sorted by date
     df = df.sort_values("date")
-    return {"data": df.to_dict(orient="records")}
+    # Normalise column names: use 'cases' if present, else 'total_cases'
+    if "cases" in df.columns:
+        cases_col = df["cases"].astype(float)
+    elif "total_cases" in df.columns:
+        cases_col = df["total_cases"].astype(float)
+    else:
+        # If no cases column found, return error
+        return {"error": "no cases column", "data": []}
+    # Determine temperature column if present; else None
+    temp_series: Optional[pd.Series] = None
+    for col in df.columns:
+        if col.lower().startswith("temp") or col.lower().startswith("temperature"):
+            temp_series = df[col].apply(lambda x: float(x) if pd.notnull(x) else None)
+            break
+    # Build list of records for the API
+    out: List[Dict[str, Any]] = []
+    for idx, row in df.iterrows():
+        date_str = row["date"] if isinstance(row["date"], (str, bytes)) else (
+            row["date"].date().isoformat() if hasattr(row["date"], "date") else str(row["date"])
+        )
+        cases_val = int(float(cases_col.loc[idx])) if pd.notnull(cases_col.loc[idx]) else 0
+        temp_val: Optional[float] = None
+        if temp_series is not None:
+            try:
+                temp_val = temp_series.loc[idx]
+            except Exception:
+                temp_val = None
+        out.append({"date": date_str, "cases": cases_val, "temp": temp_val})
+    return {"data": out}
 
 
 class PredictRequest(BaseModel):
