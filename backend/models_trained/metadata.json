@@ -1,0 +1,26 @@
+{
+  "window": 8,
+  "horizon": 1,
+  "features": [
+    "temp_min",
+    "temp_media",
+    "temp_max",
+    "umi_media",
+    "umi_min",
+    "chuva",
+    "pressao_media",
+    "vento_rajada_max",
+    "vento_vel_media",
+    "ponto_orvalho_media",
+    "total_cases_lag1",
+    "total_cases_lag2"
+  ],
+  "target": "total_cases",
+  "framework": "keras",
+  "tensorflow_version": "3.10.0",
+  "artifacts": {
+    "keras": "/content/arboviroses_artifacts/model_lstm.keras",
+    "h5": "/content/arboviroses_artifacts/model_lstm.h5",
+    "savedmodel_dir": null
+  }
+}
