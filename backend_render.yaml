@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: arboviroses-platform
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app_lstm:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://arboviroses-platform-front.onrender.com,http://localhost:5173,http://localhost:3000
