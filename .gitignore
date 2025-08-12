@@ -1,0 +1,48 @@
+.venv/
+env/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Data & Artifacts
+backend/artifacts/
+backend/models_trained/
+backend/data/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Others
+*.sqlite3
+*.db
+
+# Ignore environment files
+.env*
+
+* text=auto
