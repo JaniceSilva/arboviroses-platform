@@ -1,3 +1,80 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+import pandas as pd
+import numpy as np
+import joblib
+import os
+
+app = FastAPI(title="Arboviroses API")
+
+# Configura CORS
+ALLOWED_ORIGINS = os.getenv(
+    "ALLOWED_ORIGINS",
+    "https://arboviroses-platform-front.onrender.com,http://localhost:5173,http://localhost:3000",
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in ALLOWED_ORIGINS.split(",") if o.strip()],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Diretórios
+BASE_DIR = os.path.dirname(__file__)
+DATA_DIR = os.path.join(BASE_DIR, "data")
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+DASHBOARD_INDEX = os.path.join(STATIC_DIR, "dashboard", "index.html")
+
+# Monta arquivos estáticos em /static
+if os.path.isdir(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+def load_city_csv(city: str) -> pd.DataFrame:
+    """Carrega o CSV da cidade especificada."""
+    path = os.path.join(DATA_DIR, f"{city}.csv")
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    return pd.read_csv(path, parse_dates=["date"])
+
+# Serve o dashboard na raiz se houver
+@app.get("/")
+def root():
+    if os.path.exists(DASHBOARD_INDEX):
+        return FileResponse(DASHBOARD_INDEX)
+    return {"status": "ok", "message": "Arboviroses API online (sem dashboard/index.html)"}
+
+@app.get("/api/health")
+def health():
+    return {"ok": True}
+
+@app.get("/api/cities")
+def get_cities():
+    """Retorna lista de cidades disponíveis com base nos CSVs em /data."""
+    if not os.path.isdir(DATA_DIR):
+        return []
+    return sorted(
+        [f[:-4] for f in os.listdir(DATA_DIR) if f.endswith(".csv")]
+    ) or ["teofilo_otoni", "diamantina"]
+
+@app.get("/api/data/{city}")
+def get_data(city: str):
+    """Retorna dados históricos de uma cidade."""
+    df = load_city_csv(city)
+    if df.empty:
+        return {"error": "no data", "data": []}
+    df = df.sort_values("date")
+    return {"data": df.to_dict(orient="records")}
+
+# Define o modelo de requisição para previsões
+class PredictRequest(BaseModel):
+    city: str
+    last_weeks: int = 12
+
 @app.post("/api/predict")
 def predict(req: PredictRequest):
     """Realiza previsão de casos para uma cidade."""

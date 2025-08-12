@@ -1,20 +1,24 @@
 services:
   - type: web
-    name: arboviroses-platform-backend
+    # Nome do serviço deve refletir o domínio https://arboviroses-platform.onrender.com
+    name: arboviroses-platform
     env: python
     rootDir: backend
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
+      # Origem permitida deve ser o domínio do frontend estático
       - key: ALLOWED_ORIGINS
-        value: https://arboviroses-platform-frontend.onrender.com
+        value: https://arboviroses-platform-front.onrender.com
 
   - type: web
-    name: arboviroses-platform-frontend
+    # Nome do serviço deve refletir o domínio https://arboviroses-platform-front.onrender.com
+    name: arboviroses-platform-front
     env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
+      # URL da API deve apontar para o backend (com sufixo /api)
       - key: VITE_API_URL
-        value: https://arboviroses-platform-backend.onrender.com/api
+        value: https://arboviroses-platform.onrender.com/api
