@@ -1,18 +1,20 @@
 services:
   - type: web
-    name: arboviroses-backend-final
+    name: arboviroses-platform-backend
     env: python
-    plan: free
-    region: oregon
-    autoDeploy: true
-
+    rootDir: backend
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -w 2 -t 180 -b 0.0.0.0:$PORT app:app
-
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.9
       - key: ALLOWED_ORIGINS
-        value: https://arboviroses-platform-front.onrender.com,http://localhost:5173,http://localhost:3000
+        value: https://arboviroses-platform-frontend.onrender.com
 
-    healthCheckPath: /docs
+  - type: web
+    name: arboviroses-platform-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://arboviroses-platform-backend.onrender.com/api
