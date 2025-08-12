@@ -7,14 +7,28 @@ import os
 from pydantic import BaseModel
 
 app = FastAPI(title="Arboviroses API")
+ALLOWED_ORIGINS = [
+    "https://arboviroses-platform-front.onrender.com",
+    "http://localhost:5173",   # dev local (Vite)
+    "http://localhost:3000",   # dev local (CRA)
+]
 
 # CORS liberado para qualquer origem
+
 app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+'''app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"]
-)
+)'''
 
 # Diretórios de dados e modelos
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
