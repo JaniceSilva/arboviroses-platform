@@ -7,10 +7,12 @@ services:
     autoDeploy: true
 
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -w 2 -t 120 -b 0.0.0.0:$PORT src.main:app
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -w 2 -t 180 -b 0.0.0.0:$PORT app:app
 
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: ALLOWED_ORIGINS
+        value: https://arboviroses-platform-front.onrender.com,http://localhost:5173,http://localhost:3000
 
     healthCheckPath: /docs
