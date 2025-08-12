@@ -35,6 +35,9 @@ import os
 import sqlite3
 from typing import List, Dict, Any, Optional
 
+import unicodedata
+
+
 app = FastAPI(title="Arboviroses API")
 
 # ---------------------------------------------------------------------------
@@ -115,32 +118,46 @@ def query_weekly_cases(city: str) -> List[Dict[str, Any]]:
         return []
     conn = get_db_connection()
     try:
-        # Attempt to read date, total_cases and temp from the weekly_cases table
+        def slugify(name: str) -> str:
+            """Create a lowercase, underscore‑separated slug without accents."""
+            nfkd = unicodedata.normalize("NFKD", name)
+            no_accent = "".join(c for c in nfkd if not unicodedata.combining(c))
+            return no_accent.replace(" ", "_").lower()
+
+        # Try direct match first
         cursor = conn.execute(
             "SELECT date, total_cases, temp FROM weekly_cases WHERE city = ? ORDER BY date",
             (city,),
         )
         rows = cursor.fetchall()
+        # If no rows and case is slug or accent variation, attempt to find a matching city name
+        if not rows:
+            target_slug = slugify(city)
+            # Find a matching city by slug from distinct names
+            cur_cities = conn.execute("SELECT DISTINCT city FROM weekly_cases").fetchall()
+            match_city = None
+            for (cname,) in cur_cities:
+                if slugify(cname) == target_slug:
+                    match_city = cname
+                    break
+            if match_city:
+                cursor = conn.execute(
+                    "SELECT date, total_cases, temp FROM weekly_cases WHERE city = ? ORDER BY date",
+                    (match_city,),
+                )
+                rows = cursor.fetchall()
         result: List[Dict[str, Any]] = []
         for row in rows:
-            date_str = row[0]
-            total_cases = row[1]
-            temp_val = row[2]  # May be None or NaN
-            # Ensure cases is an int (0 when missing)
+            date_str, total_cases, temp_val = row
             cases_val = int(total_cases) if total_cases is not None else 0
-            # Temperature may be stored as float or None; preserve None
-            if temp_val is None:
-                temp_out: Optional[float] = None
-            else:
+            # Convert temperature to float, handle None/NaN
+            temp_out: Optional[float] = None
+            if temp_val is not None:
                 try:
                     temp_out = float(temp_val)
                 except Exception:
                     temp_out = None
-            result.append({
-                "date": date_str,
-                "cases": cases_val,
-                "temp": temp_out,
-            })
+            result.append({"date": date_str, "cases": cases_val, "temp": temp_out})
         return result
     except Exception:
         # Table does not exist or other error
