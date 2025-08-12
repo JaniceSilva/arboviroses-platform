@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard de Arboviroses</title>
+  <!-- Importa a biblioteca Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #357edd;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .controls label {
+      margin-right: 0.5rem;
+    }
+    .controls select,
+    .controls button,
+    .controls input[type=number] {
+      margin-right: 1rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    #charts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      #charts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard de Arboviroses</h1>
+  </header>
+  <main>
+    <section class="controls">
+      <label for="citySelect">Selecione a cidade:</label>
+      <select id="citySelect"></select>
+      <label for="weeksInput">Últimas semanas para previsão:</label>
+      <input id="weeksInput" type="number" value="12" min="4" max="52" />
+      <button id="updateBtn">Atualizar</button>
+    </section>
+    <div id="charts">
+      <div>
+        <h3>Série Histórica de Casos</h3>
+        <canvas id="historyChart"></canvas>
+      </div>
+      <div>
+        <h3>Previsão de Casos (próximas 4 semanas)</h3>
+        <canvas id="predictChart"></canvas>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Dados fornecidos pela API de Arboviroses</p>
+  </footer>
+  <script>
+    // Seletores de elementos
+    const citySelect = document.getElementById('citySelect');
+    const weeksInput = document.getElementById('weeksInput');
+    const updateBtn = document.getElementById('updateBtn');
+    const historyCanvas = document.getElementById('historyChart');
+    const predictCanvas = document.getElementById('predictChart');
+    
+    // Instâncias de gráficos (inicialmente vazias)
+    let historyChart;
+    let predictChart;
+
+    // Função para inicializar a lista de cidades
+    async function loadCities() {
+      try {
+        const response = await fetch('/api/cities');
+        const cities = await response.json();
+        // Limpa o select
+        citySelect.innerHTML = '';
+        cities.forEach(city => {
+          const option = document.createElement('option');
+          option.value = city;
+          option.textContent = city.replace(/_/g, ' ');
+          citySelect.appendChild(option);
+        });
+        // Carrega dados da primeira cidade por padrão
+        if (cities.length > 0) {
+          loadDataAndPredictions(cities[0]);
+        }
+      } catch (error) {
+        console.error('Erro ao carregar cidades:', error);
+      }
+    }
+
+    // Função para carregar dados históricos e previsões
+    async function loadDataAndPredictions(city) {
+      try {
+        // Pega número de semanas
+        const lastWeeks = parseInt(weeksInput.value) || 12;
+        // Histórico
+        const dataResponse = await fetch(`/api/data/${encodeURIComponent(city)}`);
+        const dataJson = await dataResponse.json();
+        const records = dataJson.data || [];
+        const dates = records.map(r => r.date);
+        const cases = records.map(r => r.cases);
+        // Atualiza gráfico de histórico
+        updateHistoryChart(dates, cases, city);
+        // Previsões
+        const predictResponse = await fetch('/api/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ city: city, last_weeks: lastWeeks })
+        });
+        const predictJson = await predictResponse.json();
+        const preds = predictJson.prediction_weeks || [];
+        updatePredictChart(preds);
+      } catch (error) {
+        console.error('Erro ao carregar dados ou previsões:', error);
+      }
+    }
+
+    // Função para atualizar gráfico de histórico
+    function updateHistoryChart(labels, data, city) {
+      if (historyChart) {
+        historyChart.destroy();
+      }
+      historyChart = new Chart(historyCanvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: `Casos em ${city.replace(/_/g, ' ')}`,
+              data: data,
+              fill: false,
+              borderColor: 'rgb(53, 120, 237)',
+              tension: 0.1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 10
+              }
+            },
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              display: true
+            },
+            title: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+
+    // Função para atualizar gráfico de previsões
+    function updatePredictChart(preds) {
+      if (predictChart) {
+        predictChart.destroy();
+      }
+      const labels = preds.map((_, idx) => `Semana ${idx + 1}`);
+      predictChart = new Chart(predictCanvas.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Previsões',
+              data: preds,
+              backgroundColor: 'rgba(53, 120, 237, 0.5)',
+              borderColor: 'rgba(53, 120, 237, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              beginAtZero: true
+            },
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              display: true
+            },
+            title: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+
+    // Eventos
+    updateBtn.addEventListener('click', () => {
+      const city = citySelect.value;
+      if (city) {
+        loadDataAndPredictions(city);
+      }
+    });
+
+    citySelect.addEventListener('change', () => {
+      const city = citySelect.value;
+      if (city) {
+        loadDataAndPredictions(city);
+      }
+    });
+
+    // Inicializa o dashboard carregando cidades
+    loadCities();
+  </script>
+</body>
+</html>
