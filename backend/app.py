@@ -1,357 +1,65 @@
-"""
-FastAPI backend for the arboviroses dashboard.
-
-This version aligns the data API with the weekly pre‑processing used during
-LSTM training and introduces a lightweight SQLite database to optimise
-data access.  The database is built from the raw SINAN arboviroses
-dataset via the ``scripts/build_database.py`` script.  When available,
-endpoints will read from ``arboviroses.db`` instead of parsing CSVs on
-each request.
-
-Endpoints:
-
-- ``GET /api/cities`` – returns a list of available municipalities.
-- ``GET /api/data/{city}`` – returns weekly aggregated case counts for a
-  municipality.
-- ``POST /api/predict`` – returns predictions from a pre‑trained LSTM
-  model stored in ``backend/models``.  Uses the most recent ``n`` weeks of
-  data for the selected city, falling back to zeros if insufficient
-  history is available.
-
-The original CSV loading functions are retained as a fallback when the
-database is absent.  To generate the database, run
-``python scripts/build_database.py`` from the ``backend`` folder.
-"""
-
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-from pydantic import BaseModel
-import pandas as pd
-import numpy as np
-import joblib
-import os
-import sqlite3
-from typing import List, Dict, Any, Optional
-
+# --- adicione perto dos imports ---
 import unicodedata
+import logging
+logger = logging.getLogger(__name__)
 
+def _slug(s: str) -> str:
+    if s is None: 
+        return ""
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
+    return s.lower().replace(" ", "_")
 
-app = FastAPI(title="Arboviroses API")
+def _table_columns(conn, table: str) -> set:
+    cur = conn.execute(f"PRAGMA table_info({table})")
+    return {row[1] for row in cur.fetchall()}
 
-# ---------------------------------------------------------------------------
-# CORS configuration
-#
-# Allow the static frontend hosted on Render and local development URLs.  The
-# environment variable ``ALLOWED_ORIGINS`` may contain a comma‑separated list
-# of additional origins.  Each origin is stripped of whitespace before being
-# applied to the middleware.
-# ---------------------------------------------------------------------------
-ALLOWED_ORIGINS = os.getenv(
-    "ALLOWED_ORIGINS",
-    "https://arboviroses-platform-front.onrender.com,http://localhost:5173,http://localhost:3000",
-)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[o.strip() for o in ALLOWED_ORIGINS.split(",") if o.strip()],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+def _resolve_city(conn, raw_city: str) -> str:
+    """Tenta casar 'teofilo_otoni' com 'Teófilo Otoni' etc."""
+    target = _slug(raw_city)
+    cur = conn.execute("SELECT DISTINCT city FROM weekly_cases")
+    cities = [r[0] for r in cur.fetchall()]
+    for c in cities:
+        if _slug(c) == target:
+            return c
+    # se não achou, devolve original (pode haver slug já gravado)
+    return raw_city
 
-# ---------------------------------------------------------------------------
-# Directory constants
-#
-# ``BASE_DIR`` – absolute path to this file's directory.
-# ``DATA_DIR`` – contains input CSVs and the SQLite database.
-# ``MODEL_DIR`` – contains the pre‑trained LSTM model and associated metadata.
-# ``STATIC_DIR`` – optional static assets for hosting a dashboard.
-# ---------------------------------------------------------------------------
-BASE_DIR = os.path.dirname(__file__)
-DATA_DIR = os.path.join(BASE_DIR, "data")
-MODEL_DIR = os.path.join(BASE_DIR, "models")
-STATIC_DIR = os.path.join(BASE_DIR, "static")
-DASHBOARD_INDEX = os.path.join(STATIC_DIR, "dashboard", "index.html")
-DB_PATH = os.path.join(DATA_DIR, "arboviroses.db")
-
-# Mount static files if a directory exists.  This allows a SPA built from
-# the frontend to be served by the same FastAPI process without a separate
-# web server.
-if os.path.isdir(STATIC_DIR):
-    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
-
-
-def load_city_csv(city: str) -> pd.DataFrame:
-    """Load a per‑city CSV from ``DATA_DIR``.
-
-    The CSV must contain a ``date`` column.  If the file does not exist,
-    an empty DataFrame is returned.
-    """
-    path = os.path.join(DATA_DIR, f"{city}.csv")
-    if not os.path.exists(path):
-        return pd.DataFrame()
-    return pd.read_csv(path, parse_dates=["date"])
-
-
-def get_db_connection() -> sqlite3.Connection:
-    """Open a connection to the SQLite database.
-
-    If the database file does not exist, the connection will still be
-    established but queries will fail until the schema is created.  It
-    is the caller's responsibility to close the connection.
-    """
-    return sqlite3.connect(DB_PATH)
-
-
-def query_weekly_cases(city: str) -> List[Dict[str, Any]]:
-    """Fetch weekly aggregated data from the database for a given city.
-
-    Returns a list of dictionaries with ``date``, ``cases`` and ``temp`` keys.
-    If the database or table is missing, falls back to an empty list.
-
-    The ``cases`` field corresponds to the ``total_cases`` column in the
-    database.  Temperature values are returned as floats when available
-    or ``None`` when missing.
-    """
+def query_weekly_cases(city: str) -> list[dict]:
     if not os.path.exists(DB_PATH):
+        logger.warning("DB não encontrado em %s", DB_PATH)
         return []
+
     conn = get_db_connection()
     try:
-        def slugify(name: str) -> str:
-            """Create a lowercase, underscore‑separated slug without accents."""
-            nfkd = unicodedata.normalize("NFKD", name)
-            no_accent = "".join(c for c in nfkd if not unicodedata.combining(c))
-            return no_accent.replace(" ", "_").lower()
+        cols = _table_columns(conn, "weekly_cases")
+        if "date" not in cols:
+            logger.error("Tabela weekly_cases sem coluna 'date'")
+            return []
 
-        # Try direct match first
-        cursor = conn.execute(
-            "SELECT date, total_cases, temp FROM weekly_cases WHERE city = ? ORDER BY date",
-            (city,),
-        )
-        rows = cursor.fetchall()
-        # If no rows and case is slug or accent variation, attempt to find a matching city name
-        if not rows:
-            target_slug = slugify(city)
-            # Find a matching city by slug from distinct names
-            cur_cities = conn.execute("SELECT DISTINCT city FROM weekly_cases").fetchall()
-            match_city = None
-            for (cname,) in cur_cities:
-                if slugify(cname) == target_slug:
-                    match_city = cname
-                    break
-            if match_city:
-                cursor = conn.execute(
-                    "SELECT date, total_cases, temp FROM weekly_cases WHERE city = ? ORDER BY date",
-                    (match_city,),
-                )
-                rows = cursor.fetchall()
-        result: List[Dict[str, Any]] = []
-        for row in rows:
-            date_str, total_cases, temp_val = row
-            cases_val = int(total_cases) if total_cases is not None else 0
-            # Convert temperature to float, handle None/NaN
-            temp_out: Optional[float] = None
-            if temp_val is not None:
-                try:
-                    temp_out = float(temp_val)
-                except Exception:
-                    temp_out = None
-            result.append({"date": date_str, "cases": cases_val, "temp": temp_out})
-        return result
-    except Exception:
-        # Table does not exist or other error
+        cases_col = "cases" if "cases" in cols else ("total_cases" if "total_cases" in cols else None)
+        if not cases_col:
+            logger.error("Nenhuma coluna de casos encontrada (nem 'cases' nem 'total_cases'). Colunas: %s", cols)
+            return []
+
+        has_temp = "temp" in cols
+        city_db = _resolve_city(conn, city)
+
+        sql = f"""
+            SELECT
+              date AS date,
+              {cases_col} AS cases
+              {", temp AS temp" if has_temp else ", NULL AS temp"}
+            FROM weekly_cases
+            WHERE city = ?
+            ORDER BY date
+        """
+        rows = conn.execute(sql, (city_db,)).fetchall()
+        return [{"date": r["date"], "cases": r["cases"], "temp": r["temp"]} for r in rows]
+
+    except Exception as e:
+        logger.exception("Falha em query_weekly_cases(%s): %s", city, e)
+        # devolve vazio (evita 500 no front)
         return []
     finally:
         conn.close()
-
-
-def get_available_cities() -> List[str]:
-    """Return the list of municipalities known to the system.
-
-    Preference is given to the SQLite database; if it exists and
-    contains the ``weekly_cases`` table, distinct city names are read
-    from it.  Otherwise, per‑city CSV filenames in ``DATA_DIR`` are
-    inspected.  A fallback list is returned when no data sources are found.
-    """
-    # Attempt to read from the database
-    if os.path.exists(DB_PATH):
-        conn = get_db_connection()
-        try:
-            cursor = conn.execute("SELECT DISTINCT city FROM weekly_cases ORDER BY city")
-            rows = cursor.fetchall()
-            if rows:
-                return [row[0] for row in rows]
-        except Exception:
-            pass
-        finally:
-            conn.close()
-    # Fall back to CSV filenames
-    if os.path.isdir(DATA_DIR):
-        cities = [f[:-4] for f in os.listdir(DATA_DIR) if f.endswith(".csv")]
-        if cities:
-            return sorted(cities)
-    # Ultimate fallback
-    return ["teofilo_otoni", "diamantina"]
-
-
-# ---------------------------------------------------------------------------
-# FastAPI endpoints
-# ---------------------------------------------------------------------------
-
-@app.get("/")
-def root():
-    """Serve the dashboard HTML if present, otherwise return a status message."""
-    if os.path.exists(DASHBOARD_INDEX):
-        return FileResponse(DASHBOARD_INDEX)
-    return {"status": "ok", "message": "Arboviroses API online (sem dashboard/index.html)"}
-
-
-@app.get("/api/health")
-def health():
-    """Health check endpoint."""
-    return {"ok": True}
-
-
-@app.get("/api/cities")
-def get_cities():
-    """Return the list of available municipalities.
-
-    This endpoint first checks the SQLite database for distinct city
-    names; if none are present, it inspects the CSV directory.  If
-    neither source yields results, it returns a hard‑coded fallback.
-    """
-    return sorted(get_available_cities())
-
-
-@app.get("/api/data/{city}")
-def get_data(city: str):
-    """Return weekly aggregated data for a municipality.
-
-    When the database is available, weekly case counts are read from the
-    ``weekly_cases`` table.  Otherwise, a per‑city CSV is loaded and
-    returned as originally implemented.  The returned structure is
-    always a list of dictionaries with at least a ``date`` key.
-    """
-    # Prefer database if available
-    records = query_weekly_cases(city)
-    if records:
-        return {"data": records}
-    # Fallback to CSV if no database data
-    df = load_city_csv(city)
-    if df.empty:
-        return {"error": "no data", "data": []}
-    # Ensure the DataFrame is sorted by date
-    df = df.sort_values("date")
-    # Normalise column names: use 'cases' if present, else 'total_cases'
-    if "cases" in df.columns:
-        cases_col = df["cases"].astype(float)
-    elif "total_cases" in df.columns:
-        cases_col = df["total_cases"].astype(float)
-    else:
-        # If no cases column found, return error
-        return {"error": "no cases column", "data": []}
-    # Determine temperature column if present; else None
-    temp_series: Optional[pd.Series] = None
-    for col in df.columns:
-        if col.lower().startswith("temp") or col.lower().startswith("temperature"):
-            temp_series = df[col].apply(lambda x: float(x) if pd.notnull(x) else None)
-            break
-    # Build list of records for the API
-    out: List[Dict[str, Any]] = []
-    for idx, row in df.iterrows():
-        date_str = row["date"] if isinstance(row["date"], (str, bytes)) else (
-            row["date"].date().isoformat() if hasattr(row["date"], "date") else str(row["date"])
-        )
-        cases_val = int(float(cases_col.loc[idx])) if pd.notnull(cases_col.loc[idx]) else 0
-        temp_val: Optional[float] = None
-        if temp_series is not None:
-            try:
-                temp_val = temp_series.loc[idx]
-            except Exception:
-                temp_val = None
-        out.append({"date": date_str, "cases": cases_val, "temp": temp_val})
-    return {"data": out}
-
-
-class PredictRequest(BaseModel):
-    city: str
-    last_weeks: int = 12
-
-
-@app.post("/api/predict")
-def predict(req: PredictRequest):
-    """Return predictions for a city using the trained LSTM model.
-
-    The endpoint attempts to retrieve the last ``req.last_weeks`` of
-    weekly case counts from the database.  If the database is not
-    available or lacks data for the city, it falls back to loading
-    per‑city CSV files.  Zero padding is applied when fewer than
-    ``last_weeks`` observations are available.
-    """
-    # Retrieve sequence from database
-    seq: List[float] = []
-    records = query_weekly_cases(req.city)
-    if records:
-        # Extract the total_cases values, ensure order by date ascending
-        seq = [float(r.get("total_cases", 0)) for r in records]
-    else:
-        # Fallback to CSV
-        df = load_city_csv(req.city)
-        if df.empty:
-            return {"error": "no data"}
-        if "cases" in df.columns:
-            seq = df.sort_values("date")["cases"].astype(float).values.tolist()
-        elif "total_cases" in df.columns:
-            seq = df.sort_values("date")["total_cases"].astype(float).values.tolist()
-        else:
-            return {"error": "no cases column"}
-    # Pad or truncate the sequence
-    if len(seq) < req.last_weeks:
-        pad = [0.0] * (req.last_weeks - len(seq))
-        seq = pad + seq
-    else:
-        seq = seq[-req.last_weeks:]
-    model_path_h5 = os.path.join(MODEL_DIR, "model.h5")
-    model_path_keras = os.path.join(MODEL_DIR, "model.keras")
-    metadata_path = os.path.join(MODEL_DIR, "metadata.json")
-    scaler_path = os.path.join(MODEL_DIR, "scaler.pkl")
-    # Load model and scaler if available
-    predictions: List[float]
-    try:
-        # Determine model file extension
-        model_file = None
-        if os.path.exists(model_path_h5):
-            model_file = model_path_h5
-        elif os.path.exists(model_path_keras):
-            model_file = model_path_keras
-        if model_file:
-            import tensorflow as tf  # imported here to avoid dependency at startup
-            scaler: Optional[Any] = None
-            if os.path.exists(scaler_path):
-                scaler = joblib.load(scaler_path)
-            last = np.array(seq, dtype=float)
-            # Apply scaling if scaler exists
-            if scaler is not None:
-                last_scaled = scaler.transform(last.reshape(-1, 1)).flatten()
-            else:
-                last_scaled = last
-            # Reshape for LSTM [batch, timesteps, features]
-            inp = last_scaled.reshape(1, req.last_weeks, 1)
-            model = tf.keras.models.load_model(model_file)
-            p_scaled = model.predict(inp).flatten()
-            # Inverse scale
-            if scaler is not None:
-                predictions = scaler.inverse_transform(p_scaled.reshape(-1, 1)).flatten().tolist()
-            else:
-                predictions = p_scaled.tolist()
-            predictions = [max(0.0, float(x)) for x in predictions]
-        else:
-            # No trained model found; default to mean of last 4 weeks
-            avg = float(np.mean(seq[-4:])) if len(seq) >= 4 else float(np.mean(seq))
-            predictions = [max(0.0, round(avg))] * 4
-    except Exception:
-        # On any error, default to mean of last 4 weeks
-        avg = float(np.mean(seq[-4:])) if len(seq) >= 4 else float(np.mean(seq))
-        predictions = [max(0.0, round(avg))] * 4
-    return {"prediction_weeks": predictions}
