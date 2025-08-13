@@ -1,47 +1,28 @@
-# ---------- STAGE 1: build do frontend ----------
-FROM node:20-alpine AS frontend
-WORKDIR /app/frontend
+# ... (stages anteriores inalterados)
 
-# Instala com cache eficiente
-COPY frontend/package*.json ./
-RUN npm ci --no-audit --no-fund
-
-# Copia o código e faz build
-COPY frontend ./
-# Mostra logs mais verbosos do Vite
-ENV NODE_ENV=production
-RUN npm run build -- --debug
-
-# ---------- STAGE 2: backend + assets ----------
 FROM python:3.11-slim
-
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
-
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /app
 
-# Dependências mínimas do sistema
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
+# deps mínimas
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
-# Copia backend
+# copia backend
 COPY backend /app/backend
 
-# Copia build do front para static do back
+# copia build do front para o static do back (do estágio de frontend)
 RUN rm -rf /app/backend/static/dashboard && mkdir -p /app/backend/static/dashboard
 COPY --from=frontend /app/frontend/dist/ /app/backend/static/dashboard/
 
-# Instala deps Python
-WORKDIR /app/backend
+# instala deps
 RUN pip install --no-cache-dir --upgrade pip \
- && pip install --no-cache-dir -r requirements.txt
+ && pip install --no-cache-dir -r /app/backend/requirements.txt
 
-# Gera DB no build (se falhar, não quebra a imagem)
-RUN python scripts/build_database.py || echo "WARN: build_database falhou; seguindo"
+# cria/atualiza o DB; se falhar, não derruba o container
+RUN python /app/backend/scripts/build_database.py || echo "WARN: build_database falhou; seguindo"
 
 EXPOSE 8000
-CMD bash -lc "cd /app/backend \
-  && python scripts/build_database.py || echo 'WARN: build_database falhou; seguindo' \
-  && uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"
 
+# >>> use o caminho de módulo totalmente qualificado
+CMD ["bash", "-lc", "python -m uvicorn backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
