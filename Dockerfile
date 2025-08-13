@@ -42,3 +42,8 @@ RUN python scripts/build_database.py || echo "WARN: build_database falhou; segui
 
 EXPOSE 8000
 CMD uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}
+
+CMD bash -lc "cd /app/backend \
+  && python scripts/build_database.py || echo 'WARN: build_database falhou; seguindo' \
+  && uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"
+
