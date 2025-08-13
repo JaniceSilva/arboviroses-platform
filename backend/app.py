@@ -1,5 +1,9 @@
+
 # --- adicione perto dos imports ---
 import unicodedata
+from fastapi import FastAPI
+
+app = FastAPI()  # <-- este nome precisa ser 'app'
 import logging
 logger = logging.getLogger(__name__)
 
