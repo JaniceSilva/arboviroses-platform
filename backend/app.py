@@ -1,7 +1,11 @@
 
-
+import numpy as np
+import json
+import joblib
+from __future__ import annotations  # opcional, mas ajuda
+import pandas as pd
+from typing import List, Optional, Dict, Any
 from __future__ import annotations  # deve ser a 1ª instrução (após docstring)
-+
 import os
 import logging
 import unicodedata
