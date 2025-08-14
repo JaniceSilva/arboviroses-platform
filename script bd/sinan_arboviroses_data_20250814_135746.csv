@@ -1,0 +1,587 @@
+date,municipality,dengue,zika,chik,other,chikungunya
+2019-12-29,Diamantina,5,0,0,0,0
+2019-12-29,Teófilo Otoni,5,0,0,0,0
+2020-01-05,Diamantina,17,0,0,0,0
+2020-01-05,Teófilo Otoni,9,0,0,0,0
+2020-01-12,Diamantina,27,0,0,0,1
+2020-01-12,Teófilo Otoni,11,0,0,0,0
+2020-01-19,Diamantina,40,0,0,0,0
+2020-01-19,Teófilo Otoni,23,1,0,0,0
+2020-01-26,Diamantina,25,0,0,0,0
+2020-01-26,Teófilo Otoni,23,0,0,0,0
+2020-02-02,Diamantina,82,0,0,0,0
+2020-02-02,Teófilo Otoni,46,0,0,0,0
+2020-02-09,Diamantina,52,0,0,0,0
+2020-02-09,Teófilo Otoni,83,0,0,0,3
+2020-02-16,Diamantina,44,0,0,0,0
+2020-02-16,Teófilo Otoni,67,0,0,0,2
+2020-02-23,Diamantina,48,0,0,0,0
+2020-02-23,Teófilo Otoni,99,2,0,0,3
+2020-03-01,Diamantina,59,0,0,0,0
+2020-03-01,Teófilo Otoni,139,1,0,0,6
+2020-03-08,Diamantina,41,0,0,0,0
+2020-03-08,Teófilo Otoni,101,1,0,0,6
+2020-03-15,Diamantina,20,0,0,0,0
+2020-03-15,Teófilo Otoni,62,2,0,0,4
+2020-03-22,Diamantina,11,0,0,0,0
+2020-03-22,Teófilo Otoni,108,2,0,0,3
+2020-03-29,Diamantina,25,0,0,0,0
+2020-03-29,Teófilo Otoni,131,2,0,0,6
+2020-04-05,Diamantina,23,0,0,0,1
+2020-04-05,Teófilo Otoni,178,1,0,0,11
+2020-04-12,Diamantina,21,0,0,0,0
+2020-04-12,Teófilo Otoni,189,0,0,0,34
+2020-04-19,Diamantina,19,0,0,0,0
+2020-04-19,Teófilo Otoni,158,0,0,0,17
+2020-04-26,Diamantina,7,0,0,0,0
+2020-04-26,Teófilo Otoni,130,7,0,0,23
+2020-05-03,Diamantina,4,0,0,0,0
+2020-05-03,Teófilo Otoni,160,1,0,0,11
+2020-05-10,Diamantina,1,0,0,0,0
+2020-05-10,Teófilo Otoni,131,2,0,0,27
+2020-05-17,Diamantina,6,0,0,0,0
+2020-05-17,Teófilo Otoni,102,0,0,0,20
+2020-05-24,Diamantina,3,0,0,0,0
+2020-05-24,Teófilo Otoni,71,3,0,0,13
+2020-05-31,Diamantina,4,0,0,0,1
+2020-05-31,Teófilo Otoni,36,0,0,0,3
+2020-06-07,Diamantina,1,0,0,0,0
+2020-06-07,Teófilo Otoni,30,1,0,0,4
+2020-06-14,Diamantina,0,0,0,0,0
+2020-06-14,Teófilo Otoni,34,2,0,0,4
+2020-06-21,Diamantina,5,0,0,0,0
+2020-06-21,Teófilo Otoni,17,0,0,0,2
+2020-06-28,Diamantina,0,0,0,0,0
+2020-06-28,Teófilo Otoni,12,0,0,0,5
+2020-07-05,Diamantina,1,0,0,0,0
+2020-07-05,Teófilo Otoni,5,0,0,0,1
+2020-07-12,Diamantina,0,0,0,0,0
+2020-07-12,Teófilo Otoni,5,0,0,0,3
+2020-07-19,Diamantina,0,0,0,0,0
+2020-07-19,Teófilo Otoni,4,0,0,0,2
+2020-07-26,Diamantina,0,0,0,0,0
+2020-07-26,Teófilo Otoni,2,0,0,0,3
+2020-08-02,Diamantina,1,0,0,0,0
+2020-08-02,Teófilo Otoni,2,0,0,0,2
+2020-08-09,Diamantina,0,0,0,0,0
+2020-08-09,Teófilo Otoni,2,0,0,0,4
+2020-08-16,Diamantina,1,0,0,0,0
+2020-08-16,Teófilo Otoni,1,0,0,0,0
+2020-08-23,Diamantina,0,0,0,0,0
+2020-08-23,Teófilo Otoni,2,1,0,0,2
+2020-08-30,Diamantina,1,0,0,0,0
+2020-08-30,Teófilo Otoni,3,0,0,0,3
+2020-09-06,Diamantina,0,0,0,0,0
+2020-09-06,Teófilo Otoni,3,0,0,0,4
+2020-09-13,Diamantina,2,0,0,0,0
+2020-09-13,Teófilo Otoni,3,0,0,0,2
+2020-09-20,Diamantina,0,0,0,0,0
+2020-09-20,Teófilo Otoni,0,0,0,0,1
+2020-09-27,Diamantina,0,0,0,0,0
+2020-09-27,Teófilo Otoni,1,0,0,0,1
+2020-10-04,Diamantina,1,0,0,0,0
+2020-10-04,Teófilo Otoni,0,0,0,0,0
+2020-10-11,Diamantina,1,0,0,0,0
+2020-10-11,Teófilo Otoni,2,0,0,0,1
+2020-10-18,Diamantina,0,0,0,0,0
+2020-10-18,Teófilo Otoni,1,1,0,0,0
+2020-10-25,Diamantina,0,0,0,0,0
+2020-10-25,Teófilo Otoni,4,0,0,0,0
+2020-11-01,Diamantina,0,0,0,0,0
+2020-11-01,Teófilo Otoni,1,0,0,0,0
+2020-11-08,Diamantina,0,0,0,0,0
+2020-11-08,Teófilo Otoni,0,0,0,0,1
+2020-11-15,Diamantina,1,0,0,0,0
+2020-11-15,Teófilo Otoni,1,0,0,0,1
+2020-11-22,Diamantina,0,0,0,0,0
+2020-11-22,Teófilo Otoni,1,0,0,0,0
+2020-11-29,Diamantina,0,0,0,0,0
+2020-11-29,Teófilo Otoni,4,0,0,0,1
+2020-12-06,Diamantina,0,0,0,0,0
+2020-12-06,Teófilo Otoni,3,0,0,0,0
+2020-12-13,Diamantina,0,0,0,0,0
+2020-12-13,Teófilo Otoni,3,0,0,0,1
+2020-12-20,Diamantina,1,0,0,0,0
+2020-12-20,Teófilo Otoni,5,0,0,0,0
+2020-12-27,Diamantina,0,0,0,0,0
+2020-12-27,Teófilo Otoni,1,0,0,0,0
+2021-01-03,Diamantina,2,0,0,0,0
+2021-01-03,Teófilo Otoni,4,0,0,0,0
+2021-01-10,Diamantina,1,0,0,0,0
+2021-01-10,Teófilo Otoni,3,0,0,0,0
+2021-01-17,Diamantina,1,0,0,0,0
+2021-01-17,Teófilo Otoni,3,0,0,0,0
+2021-01-24,Diamantina,0,0,0,0,0
+2021-01-24,Teófilo Otoni,3,0,0,0,0
+2021-01-31,Diamantina,0,0,0,0,0
+2021-01-31,Teófilo Otoni,3,0,0,0,0
+2021-02-07,Diamantina,0,0,0,0,0
+2021-02-07,Teófilo Otoni,2,0,0,0,3
+2021-02-14,Diamantina,1,0,0,0,0
+2021-02-14,Teófilo Otoni,3,0,0,0,1
+2021-02-21,Diamantina,1,0,0,0,0
+2021-02-21,Teófilo Otoni,3,0,0,0,0
+2021-02-28,Diamantina,2,0,0,0,0
+2021-02-28,Teófilo Otoni,4,0,0,0,0
+2021-03-07,Diamantina,0,0,0,0,0
+2021-03-07,Teófilo Otoni,2,0,0,0,1
+2021-03-14,Diamantina,1,0,0,0,0
+2021-03-14,Teófilo Otoni,5,0,0,0,4
+2021-03-21,Diamantina,0,0,0,0,0
+2021-03-21,Teófilo Otoni,3,0,0,0,3
+2021-03-28,Diamantina,3,0,0,0,0
+2021-03-28,Teófilo Otoni,2,0,0,0,0
+2021-04-04,Diamantina,0,0,0,0,0
+2021-04-04,Teófilo Otoni,0,0,0,0,2
+2021-04-11,Diamantina,0,0,0,0,0
+2021-04-11,Teófilo Otoni,1,0,0,0,0
+2021-04-18,Diamantina,0,0,0,0,0
+2021-04-18,Teófilo Otoni,5,0,0,0,0
+2021-04-25,Diamantina,1,0,0,0,0
+2021-04-25,Teófilo Otoni,4,0,0,0,0
+2021-05-02,Diamantina,0,0,0,0,0
+2021-05-02,Teófilo Otoni,2,0,0,0,0
+2021-05-09,Diamantina,1,0,0,0,0
+2021-05-09,Teófilo Otoni,2,0,0,0,0
+2021-05-16,Diamantina,0,0,0,0,0
+2021-05-16,Teófilo Otoni,1,0,0,0,0
+2021-05-23,Diamantina,0,0,0,0,0
+2021-05-23,Teófilo Otoni,2,0,0,0,0
+2021-05-30,Diamantina,0,0,0,0,0
+2021-05-30,Teófilo Otoni,4,0,0,0,1
+2021-06-06,Diamantina,0,0,0,0,0
+2021-06-06,Teófilo Otoni,1,0,0,0,0
+2021-06-13,Diamantina,0,0,0,0,0
+2021-06-13,Teófilo Otoni,0,0,0,0,1
+2021-06-20,Diamantina,0,0,0,0,0
+2021-06-20,Teófilo Otoni,1,0,0,0,2
+2021-06-27,Diamantina,0,0,0,0,0
+2021-06-27,Teófilo Otoni,0,0,0,0,1
+2021-07-04,Diamantina,0,0,0,0,0
+2021-07-04,Teófilo Otoni,2,0,0,0,0
+2021-07-11,Diamantina,0,0,0,0,0
+2021-07-11,Teófilo Otoni,1,0,0,0,0
+2021-07-18,Diamantina,0,0,0,0,0
+2021-07-18,Teófilo Otoni,2,0,0,0,0
+2021-07-25,Diamantina,0,0,0,0,0
+2021-07-25,Teófilo Otoni,0,0,0,0,0
+2021-08-01,Diamantina,0,0,0,0,0
+2021-08-01,Teófilo Otoni,1,0,0,0,0
+2021-08-08,Diamantina,0,0,0,0,0
+2021-08-08,Teófilo Otoni,1,0,0,0,0
+2021-08-15,Diamantina,0,0,0,0,0
+2021-08-15,Teófilo Otoni,3,0,0,0,0
+2021-08-22,Diamantina,0,0,0,0,0
+2021-08-22,Teófilo Otoni,0,0,0,0,0
+2021-08-29,Diamantina,0,0,0,0,0
+2021-08-29,Teófilo Otoni,0,0,0,0,0
+2021-09-05,Diamantina,0,0,0,0,0
+2021-09-05,Teófilo Otoni,1,0,0,0,0
+2021-09-12,Diamantina,0,0,0,0,0
+2021-09-12,Teófilo Otoni,0,0,0,0,0
+2021-09-19,Diamantina,0,0,0,0,0
+2021-09-19,Teófilo Otoni,0,0,0,0,0
+2021-09-26,Diamantina,0,0,0,0,0
+2021-09-26,Teófilo Otoni,1,0,0,0,0
+2021-10-03,Diamantina,0,0,0,0,0
+2021-10-03,Teófilo Otoni,0,0,0,0,0
+2021-10-10,Diamantina,1,0,0,0,0
+2021-10-10,Teófilo Otoni,1,0,0,0,1
+2021-10-17,Diamantina,1,0,0,0,0
+2021-10-17,Teófilo Otoni,0,0,0,0,0
+2021-10-24,Diamantina,0,0,0,0,0
+2021-10-24,Teófilo Otoni,0,0,0,0,0
+2021-10-31,Diamantina,1,0,0,0,0
+2021-10-31,Teófilo Otoni,0,0,0,0,1
+2021-11-07,Diamantina,0,0,0,0,0
+2021-11-07,Teófilo Otoni,0,0,0,0,0
+2021-11-14,Diamantina,1,0,0,0,0
+2021-11-14,Teófilo Otoni,1,0,0,0,1
+2021-11-21,Diamantina,2,0,0,0,0
+2021-11-21,Teófilo Otoni,0,0,0,0,2
+2021-11-28,Diamantina,1,0,0,0,0
+2021-11-28,Teófilo Otoni,0,0,0,0,0
+2021-12-05,Diamantina,0,0,0,0,0
+2021-12-05,Teófilo Otoni,0,0,0,0,0
+2021-12-12,Diamantina,0,0,0,0,0
+2021-12-12,Teófilo Otoni,0,0,0,0,0
+2021-12-19,Diamantina,0,0,0,0,0
+2021-12-19,Teófilo Otoni,0,0,0,0,1
+2021-12-26,Diamantina,0,0,0,0,0
+2021-12-26,Teófilo Otoni,0,0,0,0,0
+2022-01-02,Diamantina,1,0,0,0,0
+2022-01-02,Teófilo Otoni,0,0,0,0,0
+2022-01-09,Diamantina,5,0,0,0,0
+2022-01-09,Teófilo Otoni,1,0,0,0,3
+2022-01-16,Diamantina,5,0,0,0,0
+2022-01-16,Teófilo Otoni,0,0,0,0,0
+2022-01-23,Diamantina,4,0,0,0,0
+2022-01-23,Teófilo Otoni,0,0,0,0,1
+2022-01-30,Diamantina,2,0,0,0,0
+2022-01-30,Teófilo Otoni,2,0,0,0,0
+2022-02-06,Diamantina,1,0,0,0,0
+2022-02-06,Teófilo Otoni,4,0,0,0,1
+2022-02-13,Diamantina,0,0,0,0,0
+2022-02-13,Teófilo Otoni,3,0,0,0,3
+2022-02-20,Diamantina,0,0,0,0,0
+2022-02-20,Teófilo Otoni,5,0,0,0,1
+2022-02-27,Diamantina,2,0,0,0,1
+2022-02-27,Teófilo Otoni,6,0,0,0,2
+2022-03-06,Diamantina,1,0,0,0,0
+2022-03-06,Teófilo Otoni,7,0,0,0,3
+2022-03-13,Diamantina,1,0,0,0,0
+2022-03-13,Teófilo Otoni,6,0,0,0,4
+2022-03-20,Diamantina,2,0,0,0,0
+2022-03-20,Teófilo Otoni,13,0,0,0,7
+2022-03-27,Diamantina,2,0,0,0,0
+2022-03-27,Teófilo Otoni,22,0,0,0,10
+2022-04-03,Diamantina,1,0,0,0,0
+2022-04-03,Teófilo Otoni,32,0,0,0,4
+2022-04-10,Diamantina,3,0,0,0,1
+2022-04-10,Teófilo Otoni,24,0,0,0,4
+2022-04-17,Diamantina,1,0,0,0,0
+2022-04-17,Teófilo Otoni,39,0,0,0,11
+2022-04-24,Diamantina,3,0,0,0,0
+2022-04-24,Teófilo Otoni,55,0,0,0,11
+2022-05-01,Diamantina,0,0,0,0,0
+2022-05-01,Teófilo Otoni,59,0,0,0,9
+2022-05-08,Diamantina,4,0,0,0,0
+2022-05-08,Teófilo Otoni,96,0,0,0,10
+2022-05-15,Diamantina,1,0,0,0,0
+2022-05-15,Teófilo Otoni,108,0,0,0,15
+2022-05-22,Diamantina,3,0,0,0,0
+2022-05-22,Teófilo Otoni,104,0,0,0,10
+2022-05-29,Diamantina,5,0,0,0,0
+2022-05-29,Teófilo Otoni,97,0,0,0,17
+2022-06-05,Diamantina,4,0,0,0,0
+2022-06-05,Teófilo Otoni,83,0,0,0,10
+2022-06-12,Diamantina,1,0,0,0,0
+2022-06-12,Teófilo Otoni,77,0,0,0,10
+2022-06-19,Diamantina,7,0,0,0,0
+2022-06-19,Teófilo Otoni,70,0,0,0,1
+2022-06-26,Diamantina,2,0,0,0,0
+2022-06-26,Teófilo Otoni,46,0,0,0,4
+2022-07-03,Diamantina,2,0,0,0,0
+2022-07-03,Teófilo Otoni,35,0,0,0,3
+2022-07-10,Diamantina,1,0,0,0,0
+2022-07-10,Teófilo Otoni,33,0,0,0,6
+2022-07-17,Diamantina,1,0,0,0,0
+2022-07-17,Teófilo Otoni,35,0,0,0,1
+2022-07-24,Diamantina,4,0,0,0,0
+2022-07-24,Teófilo Otoni,38,0,0,0,1
+2022-07-31,Diamantina,1,0,0,0,0
+2022-07-31,Teófilo Otoni,43,0,0,0,1
+2022-08-07,Diamantina,2,0,0,0,0
+2022-08-07,Teófilo Otoni,34,0,0,0,1
+2022-08-14,Diamantina,1,0,0,0,0
+2022-08-14,Teófilo Otoni,15,0,0,0,1
+2022-08-21,Diamantina,2,0,0,0,0
+2022-08-21,Teófilo Otoni,17,0,0,0,2
+2022-08-28,Diamantina,0,0,0,0,0
+2022-08-28,Teófilo Otoni,9,0,0,0,0
+2022-09-04,Diamantina,1,0,0,0,0
+2022-09-04,Teófilo Otoni,9,0,0,0,0
+2022-09-11,Diamantina,1,0,0,0,0
+2022-09-11,Teófilo Otoni,16,0,0,0,0
+2022-09-18,Diamantina,1,0,0,0,0
+2022-09-18,Teófilo Otoni,8,0,0,0,1
+2022-09-25,Diamantina,0,0,0,0,0
+2022-09-25,Teófilo Otoni,9,0,0,0,3
+2022-10-02,Diamantina,1,0,0,0,0
+2022-10-02,Teófilo Otoni,8,0,0,0,0
+2022-10-09,Diamantina,1,0,0,0,0
+2022-10-09,Teófilo Otoni,7,0,0,0,0
+2022-10-16,Diamantina,3,0,0,0,0
+2022-10-16,Teófilo Otoni,5,0,0,0,2
+2022-10-23,Diamantina,2,0,0,0,0
+2022-10-23,Teófilo Otoni,3,0,0,0,0
+2022-10-30,Diamantina,4,0,0,0,0
+2022-10-30,Teófilo Otoni,6,0,0,0,1
+2022-11-06,Diamantina,5,0,0,0,0
+2022-11-06,Teófilo Otoni,7,0,0,0,0
+2022-11-13,Diamantina,4,0,0,0,0
+2022-11-13,Teófilo Otoni,5,0,0,0,1
+2022-11-20,Diamantina,10,0,0,0,0
+2022-11-20,Teófilo Otoni,2,0,0,0,0
+2022-11-27,Diamantina,3,0,0,0,0
+2022-11-27,Teófilo Otoni,3,0,0,0,0
+2022-12-04,Diamantina,4,0,0,0,0
+2022-12-04,Teófilo Otoni,4,0,0,0,0
+2022-12-11,Diamantina,3,0,0,0,0
+2022-12-11,Teófilo Otoni,9,0,0,0,2
+2022-12-18,Diamantina,1,0,0,0,0
+2022-12-18,Teófilo Otoni,8,0,0,0,0
+2022-12-25,Diamantina,2,0,0,0,0
+2022-12-25,Teófilo Otoni,16,0,0,0,7
+2023-01-01,Diamantina,3,0,0,0,0
+2023-01-01,Teófilo Otoni,45,0,0,0,20
+2023-01-08,Diamantina,7,0,0,0,1
+2023-01-08,Teófilo Otoni,89,0,0,0,50
+2023-01-15,Diamantina,4,0,0,0,0
+2023-01-15,Teófilo Otoni,155,0,0,0,70
+2023-01-22,Diamantina,2,0,0,0,0
+2023-01-22,Teófilo Otoni,293,1,0,0,126
+2023-01-29,Diamantina,6,0,0,0,0
+2023-01-29,Teófilo Otoni,341,2,0,0,159
+2023-02-05,Diamantina,11,0,0,0,0
+2023-02-05,Teófilo Otoni,426,0,0,0,225
+2023-02-12,Diamantina,1,0,0,0,0
+2023-02-12,Teófilo Otoni,365,1,0,0,314
+2023-02-19,Diamantina,10,0,0,0,0
+2023-02-19,Teófilo Otoni,271,0,0,0,387
+2023-02-26,Diamantina,5,0,0,0,3
+2023-02-26,Teófilo Otoni,387,1,0,0,443
+2023-03-05,Diamantina,18,0,0,0,7
+2023-03-05,Teófilo Otoni,279,0,0,0,385
+2023-03-12,Diamantina,30,0,0,0,6
+2023-03-12,Teófilo Otoni,208,1,0,0,370
+2023-03-19,Diamantina,28,0,0,0,9
+2023-03-19,Teófilo Otoni,229,0,0,0,292
+2023-03-26,Diamantina,41,1,0,0,7
+2023-03-26,Teófilo Otoni,167,0,0,0,177
+2023-04-02,Diamantina,53,0,0,0,11
+2023-04-02,Teófilo Otoni,105,0,0,0,139
+2023-04-09,Diamantina,79,0,0,0,14
+2023-04-09,Teófilo Otoni,129,0,0,0,152
+2023-04-16,Diamantina,60,0,0,0,11
+2023-04-16,Teófilo Otoni,71,0,0,0,81
+2023-04-23,Diamantina,45,0,0,0,4
+2023-04-23,Teófilo Otoni,82,0,0,0,48
+2023-04-30,Diamantina,67,0,0,0,4
+2023-04-30,Teófilo Otoni,70,0,0,0,50
+2023-05-07,Diamantina,81,0,0,0,6
+2023-05-07,Teófilo Otoni,56,0,0,0,49
+2023-05-14,Diamantina,66,0,0,0,2
+2023-05-14,Teófilo Otoni,87,0,0,0,57
+2023-05-21,Diamantina,50,0,0,0,3
+2023-05-21,Teófilo Otoni,49,0,0,0,46
+2023-05-28,Diamantina,28,0,0,0,0
+2023-05-28,Teófilo Otoni,48,0,0,0,30
+2023-06-04,Diamantina,15,0,0,0,1
+2023-06-04,Teófilo Otoni,46,0,0,0,28
+2023-06-11,Diamantina,13,1,0,0,0
+2023-06-11,Teófilo Otoni,44,0,0,0,28
+2023-06-18,Diamantina,11,0,0,0,1
+2023-06-18,Teófilo Otoni,40,0,0,0,12
+2023-06-25,Diamantina,8,0,0,0,0
+2023-06-25,Teófilo Otoni,25,0,0,0,11
+2023-07-02,Diamantina,11,0,0,0,0
+2023-07-02,Teófilo Otoni,23,0,0,0,4
+2023-07-09,Diamantina,4,0,0,0,0
+2023-07-09,Teófilo Otoni,19,0,0,0,3
+2023-07-16,Diamantina,10,0,0,0,0
+2023-07-16,Teófilo Otoni,19,0,0,0,2
+2023-07-23,Diamantina,4,0,0,0,0
+2023-07-23,Teófilo Otoni,13,0,0,0,3
+2023-07-30,Diamantina,7,0,0,0,1
+2023-07-30,Teófilo Otoni,11,0,0,0,3
+2023-08-06,Diamantina,3,1,0,0,0
+2023-08-06,Teófilo Otoni,10,0,0,0,2
+2023-08-13,Diamantina,2,0,0,0,1
+2023-08-13,Teófilo Otoni,15,0,0,0,3
+2023-08-20,Diamantina,2,0,0,0,0
+2023-08-20,Teófilo Otoni,14,0,0,0,1
+2023-08-27,Diamantina,5,0,0,0,0
+2023-08-27,Teófilo Otoni,9,0,0,0,3
+2023-09-03,Diamantina,4,0,0,0,1
+2023-09-03,Teófilo Otoni,12,0,0,0,2
+2023-09-10,Diamantina,1,0,0,0,1
+2023-09-10,Teófilo Otoni,10,0,0,0,0
+2023-09-17,Diamantina,6,0,0,0,1
+2023-09-17,Teófilo Otoni,7,0,0,0,4
+2023-09-24,Diamantina,7,0,0,0,0
+2023-09-24,Teófilo Otoni,10,0,0,0,2
+2023-10-01,Diamantina,4,0,0,0,0
+2023-10-01,Teófilo Otoni,9,0,0,0,1
+2023-10-08,Diamantina,4,0,0,0,1
+2023-10-08,Teófilo Otoni,11,0,0,0,2
+2023-10-15,Diamantina,10,0,0,0,1
+2023-10-15,Teófilo Otoni,11,0,0,0,1
+2023-10-22,Diamantina,8,0,0,0,0
+2023-10-22,Teófilo Otoni,4,0,0,0,3
+2023-10-29,Diamantina,9,0,0,0,0
+2023-10-29,Teófilo Otoni,1,0,0,0,2
+2023-11-05,Diamantina,10,0,0,0,0
+2023-11-05,Teófilo Otoni,5,0,0,0,1
+2023-11-12,Diamantina,5,0,0,0,1
+2023-11-12,Teófilo Otoni,2,0,0,0,0
+2023-11-19,Diamantina,7,0,0,0,3
+2023-11-19,Teófilo Otoni,5,0,0,0,1
+2023-11-26,Diamantina,18,0,0,0,4
+2023-11-26,Teófilo Otoni,6,0,0,0,4
+2023-12-03,Diamantina,19,0,0,0,1
+2023-12-03,Teófilo Otoni,2,0,0,0,2
+2023-12-10,Diamantina,14,0,0,0,0
+2023-12-10,Teófilo Otoni,11,0,0,0,0
+2023-12-17,Diamantina,9,0,0,0,0
+2023-12-17,Teófilo Otoni,17,0,0,0,6
+2023-12-24,Diamantina,16,0,0,0,0
+2023-12-24,Teófilo Otoni,16,0,0,0,2
+2023-12-31,Diamantina,64,0,0,0,1
+2023-12-31,Teófilo Otoni,26,0,0,0,9
+2024-01-07,Diamantina,102,0,0,0,2
+2024-01-07,Teófilo Otoni,50,0,0,0,6
+2024-01-14,Diamantina,168,0,0,0,7
+2024-01-14,Teófilo Otoni,58,0,0,0,7
+2024-01-21,Diamantina,242,0,0,0,9
+2024-01-21,Teófilo Otoni,107,0,0,0,21
+2024-01-28,Diamantina,410,0,0,0,6
+2024-01-28,Teófilo Otoni,219,0,0,0,26
+2024-02-04,Diamantina,460,0,0,0,8
+2024-02-04,Teófilo Otoni,227,0,0,0,30
+2024-02-11,Diamantina,600,0,0,0,16
+2024-02-11,Teófilo Otoni,403,0,0,0,48
+2024-02-18,Diamantina,694,0,0,0,18
+2024-02-18,Teófilo Otoni,500,0,0,0,70
+2024-02-25,Diamantina,853,0,0,0,4
+2024-02-25,Teófilo Otoni,647,0,0,0,70
+2024-03-03,Diamantina,773,0,0,0,7
+2024-03-03,Teófilo Otoni,726,0,0,0,76
+2024-03-10,Diamantina,671,0,0,0,11
+2024-03-10,Teófilo Otoni,856,0,0,0,80
+2024-03-17,Diamantina,576,0,0,0,10
+2024-03-17,Teófilo Otoni,902,0,0,0,83
+2024-03-24,Diamantina,484,0,0,0,18
+2024-03-24,Teófilo Otoni,664,0,0,0,46
+2024-03-31,Diamantina,493,0,0,0,17
+2024-03-31,Teófilo Otoni,903,0,0,0,39
+2024-04-07,Diamantina,438,0,0,0,12
+2024-04-07,Teófilo Otoni,605,0,0,0,45
+2024-04-14,Diamantina,274,0,0,0,2
+2024-04-14,Teófilo Otoni,458,0,0,0,25
+2024-04-21,Diamantina,201,0,0,0,7
+2024-04-21,Teófilo Otoni,306,0,0,0,27
+2024-04-28,Diamantina,169,0,0,0,6
+2024-04-28,Teófilo Otoni,199,0,0,0,22
+2024-05-05,Diamantina,131,0,0,0,2
+2024-05-05,Teófilo Otoni,180,0,0,0,20
+2024-05-12,Diamantina,82,0,0,0,0
+2024-05-12,Teófilo Otoni,136,0,0,0,12
+2024-05-19,Diamantina,69,0,0,0,2
+2024-05-19,Teófilo Otoni,73,0,0,0,3
+2024-05-26,Diamantina,34,0,0,0,0
+2024-05-26,Teófilo Otoni,58,0,0,0,6
+2024-06-02,Diamantina,24,0,0,0,0
+2024-06-02,Teófilo Otoni,56,0,0,0,3
+2024-06-09,Diamantina,12,0,0,0,4
+2024-06-09,Teófilo Otoni,49,0,0,0,0
+2024-06-16,Diamantina,9,0,0,0,1
+2024-06-16,Teófilo Otoni,47,0,0,0,1
+2024-06-23,Diamantina,8,0,0,0,0
+2024-06-23,Teófilo Otoni,29,0,0,0,2
+2024-06-30,Diamantina,7,0,0,0,0
+2024-06-30,Teófilo Otoni,33,0,0,0,0
+2024-07-07,Diamantina,2,0,0,0,0
+2024-07-07,Teófilo Otoni,30,0,0,0,1
+2024-07-14,Diamantina,2,0,0,0,0
+2024-07-14,Teófilo Otoni,28,0,0,0,2
+2024-07-21,Diamantina,2,0,0,0,0
+2024-07-21,Teófilo Otoni,14,0,0,0,0
+2024-07-28,Diamantina,1,0,0,0,0
+2024-07-28,Teófilo Otoni,6,0,0,0,0
+2024-08-04,Diamantina,1,0,0,0,0
+2024-08-04,Teófilo Otoni,18,0,0,0,1
+2024-08-11,Diamantina,2,0,0,0,0
+2024-08-11,Teófilo Otoni,17,0,0,0,1
+2024-08-18,Diamantina,3,0,0,0,0
+2024-08-18,Teófilo Otoni,17,0,0,0,0
+2024-08-25,Diamantina,8,0,0,0,0
+2024-08-25,Teófilo Otoni,22,0,0,0,2
+2024-09-01,Diamantina,6,0,0,0,0
+2024-09-01,Teófilo Otoni,8,0,0,0,0
+2024-09-08,Diamantina,3,0,0,0,0
+2024-09-08,Teófilo Otoni,15,0,0,0,0
+2024-09-15,Diamantina,15,0,0,0,0
+2024-09-15,Teófilo Otoni,3,0,0,0,1
+2024-09-22,Diamantina,8,0,0,0,0
+2024-09-22,Teófilo Otoni,4,0,0,0,0
+2024-09-29,Diamantina,9,0,0,0,1
+2024-09-29,Teófilo Otoni,1,0,0,0,1
+2024-10-06,Diamantina,8,0,0,0,0
+2024-10-06,Teófilo Otoni,6,0,0,0,1
+2024-10-13,Diamantina,12,0,0,0,0
+2024-10-13,Teófilo Otoni,8,0,0,0,0
+2024-10-20,Diamantina,11,0,0,0,0
+2024-10-20,Teófilo Otoni,8,0,0,0,1
+2024-10-27,Diamantina,10,0,0,0,1
+2024-10-27,Teófilo Otoni,7,0,0,0,2
+2024-11-03,Diamantina,20,0,0,0,0
+2024-11-03,Teófilo Otoni,14,0,0,0,1
+2024-11-10,Diamantina,24,0,0,0,0
+2024-11-10,Teófilo Otoni,10,0,0,0,1
+2024-11-17,Diamantina,28,0,0,0,0
+2024-11-17,Teófilo Otoni,10,0,0,0,3
+2024-11-24,Diamantina,49,0,0,0,1
+2024-11-24,Teófilo Otoni,12,0,0,0,1
+2024-12-01,Diamantina,41,0,0,0,1
+2024-12-01,Teófilo Otoni,9,0,0,0,4
+2024-12-08,Diamantina,50,0,0,0,0
+2024-12-08,Teófilo Otoni,8,0,0,0,0
+2024-12-15,Diamantina,34,0,0,0,0
+2024-12-15,Teófilo Otoni,9,0,0,0,1
+2024-12-22,Diamantina,18,0,0,0,1
+2024-12-22,Teófilo Otoni,6,0,0,0,0
+2024-12-29,Diamantina,30,0,0,0,0
+2024-12-29,Teófilo Otoni,6,0,0,0,1
+2025-01-05,Diamantina,23,0,0,0,0
+2025-01-05,Teófilo Otoni,25,0,0,0,1
+2025-01-12,Diamantina,19,0,0,0,1
+2025-01-12,Teófilo Otoni,27,0,0,0,0
+2025-01-19,Diamantina,42,0,0,0,2
+2025-01-19,Teófilo Otoni,52,0,0,0,1
+2025-01-26,Diamantina,28,0,0,0,0
+2025-01-26,Teófilo Otoni,55,0,0,0,6
+2025-02-02,Diamantina,28,0,0,0,0
+2025-02-02,Teófilo Otoni,58,0,0,0,0
+2025-02-09,Diamantina,32,0,0,0,0
+2025-02-09,Teófilo Otoni,48,0,0,0,2
+2025-02-16,Diamantina,29,0,0,0,1
+2025-02-16,Teófilo Otoni,45,0,0,0,2
+2025-02-23,Diamantina,14,0,0,0,0
+2025-02-23,Teófilo Otoni,32,0,0,0,0
+2025-03-02,Diamantina,39,0,0,0,1
+2025-03-02,Teófilo Otoni,44,0,0,0,0
+2025-03-09,Diamantina,29,0,0,0,0
+2025-03-09,Teófilo Otoni,72,0,0,0,2
+2025-03-16,Diamantina,21,0,0,0,0
+2025-03-16,Teófilo Otoni,113,0,0,0,9
+2025-03-23,Diamantina,22,0,0,0,0
+2025-03-23,Teófilo Otoni,124,0,0,0,10
+2025-03-30,Diamantina,25,0,0,0,0
+2025-03-30,Teófilo Otoni,146,0,0,0,1
+2025-04-06,Diamantina,29,0,0,0,1
+2025-04-06,Teófilo Otoni,90,0,0,0,2
+2025-04-13,Diamantina,17,0,0,0,0
+2025-04-13,Teófilo Otoni,88,0,0,0,1
+2025-04-20,Diamantina,10,0,0,0,1
+2025-04-20,Teófilo Otoni,145,0,0,0,2
+2025-04-27,Diamantina,20,0,0,0,0
+2025-04-27,Teófilo Otoni,77,0,0,0,3
+2025-05-04,Diamantina,16,0,0,0,1
+2025-05-04,Teófilo Otoni,77,0,0,0,2
+2025-05-11,Diamantina,19,0,0,0,1
+2025-05-11,Teófilo Otoni,63,0,0,0,0
+2025-05-18,Diamantina,15,0,0,0,0
+2025-05-18,Teófilo Otoni,59,0,0,0,0
+2025-05-25,Diamantina,10,0,0,0,0
+2025-05-25,Teófilo Otoni,35,0,0,0,1
+2025-06-01,Diamantina,18,0,0,0,0
+2025-06-01,Teófilo Otoni,45,0,0,0,1
+2025-06-08,Diamantina,14,0,0,0,1
+2025-06-08,Teófilo Otoni,49,0,0,0,0
+2025-06-15,Diamantina,11,0,0,0,2
+2025-06-15,Teófilo Otoni,37,0,0,0,0
+2025-06-22,Diamantina,8,0,0,0,0
+2025-06-22,Teófilo Otoni,30,0,0,0,0
+2025-06-29,Diamantina,16,0,0,0,3
+2025-06-29,Teófilo Otoni,27,0,0,0,1
+2025-07-06,Diamantina,11,0,0,0,1
+2025-07-06,Teófilo Otoni,25,0,0,0,0
+2025-07-13,Diamantina,7,0,0,0,4
+2025-07-13,Teófilo Otoni,17,0,0,0,0
+2025-07-20,Diamantina,8,0,0,0,5
+2025-07-20,Teófilo Otoni,17,0,0,0,0
+2025-07-27,Diamantina,2,0,0,0,1
+2025-07-27,Teófilo Otoni,18,0,0,0,0
+2025-08-03,Diamantina,1,0,0,0,0
+2025-08-03,Teófilo Otoni,5,0,0,0,0

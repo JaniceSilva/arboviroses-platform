@@ -12,6 +12,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+import sqlalchemy
+
+
 
 # -----------------------------------------------------------------------------
 # Configuração básica
@@ -162,3 +165,19 @@ def api_predict(payload: Dict[str, Any]):
         "prediction_weeks": preds,
         "confidence": "very_low",
     }
+from fastapi import Response  # se ainda não tiver
+
+@app.head("/")
+def index_head():
+    # Apenas responde 200 (Render usa HEAD no health check)
+    return Response(status_code=200)
+
+@app.head("/api/health")
+def health_head():
+    return Response(status_code=200)
+
+engine = sqlalchemy.create_engine(
+    "postgresql://bd_arbovirose_user:cKDg5cWiNxkIfrGAVX5242NpLhJEaqdO@dpg-d2f0hn8dl3ps73e2a1l0-a.oregon-postgres.render.com/bd_arbovirose"
+)
+conn = engine.connect()
+# Agora você pode executar queries

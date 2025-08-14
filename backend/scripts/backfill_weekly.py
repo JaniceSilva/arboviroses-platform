@@ -114,34 +114,74 @@ def weekify(
 # --- carregadores ------------------------------------------------------------
 def load_cases_csv(path: Path) -> pd.DataFrame:
     df = _read_csv_any(path)
+
+    # Mapeia nomes de colunas para um conjunto canônico
     df = _norm_cols(
         df,
         {
+            # cidade
             "municipio": "city",
             "município": "city",
-            "municipality": "city",
+            "municipality": "city",   # <--- importante p/ seu CSV
             "cidade": "city",
             "city": "city",
+            # data
             "date": "date",
             "data": "date",
             "semana": "date",
+            # casos agregados
             "casos": "cases",
             "total_cases": "cases",
             "cases": "cases",
-            "notificacoes": "cases",               
+            "notificacoes": "cases",
+            # casos por doença (mantemos nomes; usaremos para somar)
+            "dengue_cases": "dengue_cases",
+            "zika_cases": "zika_cases",
+            "chikungunya_cases": "chikungunya_cases",
+            "febre_amarela_cases": "febre_amarela_cases",
         },
     )
-    need = {"city", "date", "cases"}
-    if not need.issubset(set(df.columns.str.lower())):
+
+    cols = set(df.columns)
+
+    # Checa se temos as essenciais (city, date)
+    if not {"city", "date"}.issubset(cols):
         raise ValueError(
-            "CSV de casos precisa conter colunas equivalentes a city/date/cases "
+            "CSV de casos precisa conter colunas equivalentes a city e date "
             f"(recebi: {list(df.columns)})"
         )
+
+    # Se 'cases' não existe (ou está todo zero), soma colunas por doença
+    disease_cols = [c for c in [
+        "dengue_cases", "zika_cases", "chikungunya_cases", "febre_amarela_cases"
+    ] if c in cols]
+
+    make_from_diseases = False
+    if "cases" not in cols:
+        make_from_diseases = True
+    else:
+        tmp = pd.to_numeric(df["cases"], errors="coerce").fillna(0)
+        if tmp.sum() == 0 and disease_cols:
+            make_from_diseases = True
+
+    if make_from_diseases:
+        if not disease_cols:
+            raise ValueError(
+                "CSV de casos precisa de 'cases' ou de colunas por doença para somar "
+                "(ex.: dengue_cases, zika_cases...)."
+            )
+        for c in disease_cols:
+            df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
+        df["cases"] = df[disease_cols].sum(axis=1).astype(int)
+
+    # Normalizações finais
     df["city"] = _norm_city_series(df["city"])
     df["date"] = _parse_dates(df["date"])
-    df = df.dropna(subset=["date"])
+    df = df.dropna(subset=["date", "city"])
     df["cases"] = pd.to_numeric(df["cases"], errors="coerce").fillna(0).astype(int)
+
     return df[["city", "date", "cases"]]
+
 
 
 def _canon(s: str) -> str:
