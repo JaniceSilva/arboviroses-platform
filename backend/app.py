@@ -5,6 +5,10 @@ from pathlib import Path
 import numpy as np
 import json
 import joblib
+from __future__ import annotations  # opcional, mas ajuda
+import pandas as pd
+from typing import List, Optional, Dict, Any
+
 
 TF_OK = True
 try:
