@@ -36,4 +36,4 @@ def main():
     print("features salvas em backend/data/features_weekly.parquet")
 
 if __name__ == "__main__":
-    main()
+    main() 
