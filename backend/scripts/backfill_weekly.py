@@ -119,6 +119,7 @@ def load_cases_csv(path: Path) -> pd.DataFrame:
         {
             "municipio": "city",
             "município": "city",
+            "municipality": "city",
             "cidade": "city",
             "city": "city",
             "date": "date",
@@ -127,7 +128,7 @@ def load_cases_csv(path: Path) -> pd.DataFrame:
             "casos": "cases",
             "total_cases": "cases",
             "cases": "cases",
-            "notificacoes": "cases",
+            "notificacoes": "cases",               
         },
     )
     need = {"city", "date", "cases"}
@@ -481,11 +482,6 @@ def main():
             print("⚠️  Sem CSV de clima. Tabela weather_weekly não foi atualizada.")
 
     print("🏁 Backfill concluído com sucesso.")
-
-    con = sqlite3.connect("backend/data/arboviroses.db")
-    for row in con.execute("SELECT city, COUNT(*) FROM weekly_cases GROUP BY city;"):
-        print(row)
-    con.close()
 
 
 if __name__ == "__main__":
