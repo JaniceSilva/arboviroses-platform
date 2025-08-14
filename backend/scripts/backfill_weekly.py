@@ -482,7 +482,12 @@ def main():
 
     print("🏁 Backfill concluído com sucesso.")
 
+    con = sqlite3.connect("backend/data/arboviroses.db")
+    for row in con.execute("SELECT city, COUNT(*) FROM weekly_cases GROUP BY city;"):
+        print(row)
+    con.close()
+
 
 if __name__ == "__main__":
     main()
-git push origin master
+

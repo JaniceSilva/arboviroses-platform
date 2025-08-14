@@ -7,4 +7,5 @@ def smape(y_true, y_pred):
     return np.mean(np.where(denom==0, 0, np.abs(y_true - y_pred) / denom)) * 100
 
 # …carregue o modelo e rode múltiplos cortes (ex.: fins de 2021/2022/2023)
-# salve metrics por cidade em backend/models/metrics.json
+# salve metrics por cidade em backend/models/metrics.json S
+ 

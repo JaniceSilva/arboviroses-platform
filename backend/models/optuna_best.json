@@ -1,0 +1,6 @@
+{
+  "lookback": 14,
+  "hidden_units": 32,
+  "dropout": 0.29291536221476416,
+  "learning_rate": 0.003340723185458812
+}
