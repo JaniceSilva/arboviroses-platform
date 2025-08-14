@@ -139,6 +139,17 @@ def get_data(city: str):
     data = query_weekly_cases(city)
     return {"data": data}
 
+@app.get("/api/build-info")
+def build_info():
+    import os, glob, time
+    from .app import STATIC_DIR  # ou ajuste o caminho se necessário
+    assets = sorted(glob.glob(os.path.join(STATIC_DIR, "dashboard", "assets", "index-*.js")))
+    ts = os.path.getmtime(assets[-1]) if assets else None
+    return {
+        "asset_js": os.path.basename(assets[-1]) if assets else None,
+        "updated_at": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts)) if ts else None
+    }
+
 
 # --------- /api/predict (naive para não quebrar o front) ---------
 class PredictRequest(BaseModel):

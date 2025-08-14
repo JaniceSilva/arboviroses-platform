@@ -1,24 +1,19 @@
 services:
   - type: web
-    # Nome do serviço deve refletir o domínio https://arboviroses-platform.onrender.com
     name: arboviroses-platform
     env: python
-    rootDir: backend
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
-    envVars:
-      # Origem permitida deve ser o domínio do frontend estático
-      - key: ALLOWED_ORIGINS
-        value: https://arboviroses-platform-front.onrender.com
-
-  - type: web
-    # Nome do serviço deve refletir o domínio https://arboviroses-platform-front.onrender.com
-    name: arboviroses-platform-front
-    env: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      # URL da API deve apontar para o backend (com sufixo /api)
-      - key: VITE_API_URL
-        value: https://arboviroses-platform.onrender.com/api
+    branch: master
+    buildCommand: |
+      pip install -r backend/requirements.txt
+      export NODE_VERSION=20.16.0
+      curl -fsSL "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" -o /tmp/node.tar.xz
+      mkdir -p "$HOME/node"
+      tar -xJf /tmp/node.tar.xz -C "$HOME/node" --strip-components=1
+      export PATH="$HOME/node/bin:$PATH"
+      cd frontend && (npm ci --no-audit --no-fund || npm install --no-audit --no-fund) && npm run build
+      rm -rf backend/static/dashboard && mkdir -p backend/static/dashboard
+      cp -r frontend/dist/* backend/static/dashboard/
+    startCommand: |
+      python backend/scripts/build_database.py || true
+      uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
