@@ -1,4 +1,13 @@
-# --- imports adicionais (topo do arquivo) ---
+
+
+from __future__ import annotations  # deve ser a 1ª instrução (após docstring)
++
+import os
+import logging
+import unicodedata
+from typing import List, Optional, Dict, Any
+import pandas as pd
+from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Optional, Tuple, Dict
 from pathlib import Path
