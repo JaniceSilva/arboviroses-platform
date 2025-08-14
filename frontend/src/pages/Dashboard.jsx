@@ -362,4 +362,6 @@ export default function Dashboard() {
     </div>
   );
 }
- 
+
+// Renomeia a coluna de casos para "cases"
+df = df.rename(columns={"NOME_DA_COLUNA_DE_CASOS": "cases"})
