@@ -363,10 +363,3 @@ export default function Dashboard() {
   );
 }
 
- HEAD
-
-// Renomeia a coluna de casos para "cases"
-df = df.rename(columns={"NOME_DA_COLUNA_DE_CASOS": "cases"})
-
-bedd3183d882c0f25ac80ac04e143ed165c8ce60
- 
